@@ -1,0 +1,41 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            
+            // | Esc  |  Q   |  W   |  E   |  R   |  T   |             |  Y   |  U   |  I   |  O   |  P   | BSPC |
+            // | Tab  |  A   |  S   |  D   |  F   |  G   |             |  H   |  J   |  K   |  L   |  ;   |  '   |
+            // | Shift|  Z   |  X   |  C   |  V   |  B   |             |  N   |  M   |  ,   |  .   |  /   | Shift|
+            //                             | Alt  | Cmd  | Lower| Raise| spc  | Alt  |
+
+            bindings = <
+&mo 1  &kp Q  &kp W  &kp F  &kp P  &kp G                    &kp J      &kp L       &kp U      &kp Y    &kp SQT   &kp TAB
+&mo 1  &kp A  &kp R  &kp S  &kp T  &kp D                    &kp H      &kp N       &kp E      &kp I    &kp O     &kp BACKSPACE
+&mo 1  &kp Z  &kp X  &kp C  &kp V  &kp B                    &kp K      &kp M       &kp COMMA  &kp DOT  &kp FSLH  &kp DELETE
+                            &mo 1  &mo 1  &mo 1  &kp ENTER  &kp SPACE  &kp ESCAPE
+            >;
+        };
+
+        layer_1 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+                                &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        layer_2 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+                                &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+    };
+};
