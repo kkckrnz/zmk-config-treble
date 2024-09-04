@@ -9,7 +9,7 @@
         default_layer {
 
 // | Esc   |   Q   |   W   |   E   |   R   |   T   |               |   Y   |   U   |   I   |   O   |   P   | BSPC  |
-// | Tab   |   A   |   S   |   D   |   F   |   G   |               |   H   |   J   |   K   |   L   |   ;   |   '   |
+// | Tab   |   A   |   S   |   D   |   F   |   G   |               |   H   |   J   |   K   |   L   |   ;   | Enter |
 // | Shift |   Z   |   X   |   C   |   V   |   B   |               |   N   |   M   |   ,   |   .   |   /   | Shift |
 //                                 | Ctrl  |  Cmd  |  Alt  |  L-1  |  spc  |  L-2  |
 
