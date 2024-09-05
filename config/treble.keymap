@@ -36,14 +36,14 @@
 
         qwerty {
             bindings = <
-&kp ESC    &kp Q  &kp W  &kp E  &kp R                &kp T                      &kp Y      &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp TAB    &kp A  &kp S  &kp D  &kp F                &kp G                      &kp H      &kp J  &kp K      &kp L    &kp SEMI  &kp ENTER
-&kp LSHFT  &kp Z  &kp X  &kp C  &kp V                &kp B                      &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                                &mo_sk 3 LEFT_SHIFT  &kp LGUI  &kp LALT  &mo 3  &kp SPACE  &mo 5
+&trans  &kp Q  &kp W  &kp E  &kp R   &kp T                   &kp Y   &kp U   &kp I      &kp O    &kp P     &trans
+&trans  &kp A  &kp S  &kp D  &kp F   &kp G                   &kp H   &kp J   &kp K      &kp L    &kp SEMI  &trans
+&trans  &kp Z  &kp X  &kp C  &kp V   &kp B                   &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans
+                             &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
-        mac {
+        macro {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
@@ -52,7 +52,7 @@
             >;
         };
 
-        nav {
+        navigation {
             // |   `   |   1   |   2   |   3   |   4   |   5   |               |       |       |       |       |       |       |
             // |   '   |   6   |   7   |   8   |   9   |   0   |               |       | Left  | Down  |  Up   | Right |       |
             // |       |   \   |   -   |   =   |   [   |   ]   |               |       | Home  | PG DN | PG UP | End   |       |
@@ -66,7 +66,25 @@
             >;
         };
 
-        num {
+        number {
+            bindings = <
+&trans  &none      &none     &none     &none      &none                   &kp STAR  &kp N4  &kp N5  &kp N6  &kp SLASH  &trans
+&trans  &kp LSHFT  &kp LALT  &kp LGUI  &kp LCTRL  &none                   &kp PLUS  &kp N1  &kp N2  &kp N3  &kp MINUS  &trans
+&trans  &none      &none     &none     &none      &none                   &kp DOT   &kp N7  &kp N8  &kp N9  &kp N0     &trans
+                                       &trans     &trans  &trans  &trans  &trans    &trans
+            >;
+        };
+
+        symbol {
+            bindings = <
+&trans  &kp SEMI  &kp LBKT   &kp RBKT   &none      &none                   &none   &none      &none     &trans    &none      &trans
+&trans  &kp BSLH  &kp MINUS  &kp EQUAL  &kp GRAVE  &none                   &none   &kp LCTRL  &kp LGUI  &kp LALT  &kp LSHFT  &trans
+&trans  &kp FSLH  &kp COMMA  &kp DOT    &none      &none                   &none   &none      &none     &none     &none      &trans
+                                        &trans     &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        function {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
@@ -75,25 +93,7 @@
             >;
         };
 
-        sym {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-                                &trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        fun {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-                                &trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        sys {
+        system {
             // | BTCLR |  BT1  |  BT2  |  BT3  |  BT4  |  BT5  |               |       |       |       |       |       |       |
             // |       |       |       |       |       |       |               |       |       |       |       |       |       |
             // |       |       |       |       |       |       |               |       |       |       |       |       |       |
