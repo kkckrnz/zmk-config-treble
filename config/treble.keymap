@@ -2,51 +2,34 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-&sk {
-};
-
 / {
     behaviors {
-        mo_sk: mo_sk {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MO_SK";
-            bindings = <&mo>, <&sk>;
-
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            require-prior-idle-ms = <100>;
-            retro-tap;
-        };
-
-        sk_shift_capsword: sk_shift_capsword {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SK_SHIFT_CAPSWORD";
-            bindings = <&sk_quick_release LEFT_SHIFT>, <&caps_word>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        sk_quick_release: sk_quick_release {
+        skQuickRelease: skQuickRelease {
             compatible = "zmk,behavior-sticky-key";
-            label = "SK_QUICK_RELEASE";
-            bindings = <&kp>;
+            label = "SKQUICKRELEASE";
+            bindings = <&none>;
             #binding-cells = <1>;
             release-after-ms = <1000>;
             quick-release;
         };
 
-        mo_sk_shift_capsword: mo_sk_shift_capsword {
+        mo_skQuickRelease: mo_skQuickRelease {
             compatible = "zmk,behavior-hold-tap";
-            label = "MO_SK_SHIFT_CAPSWORD";
-            bindings = <&mo>, <&sk_shift_capsword>;
+            label = "MO_SKQUICKRELEASE";
+            bindings = <&mo>, <&skQuickRelease>;
 
             #binding-cells = <2>;
-            flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            require-prior-idle-ms = <100>;
-            retro-tap;
+            flavor = "tap-preferred";
+        };
+
+        nav_smartShift: nav_smartShift {
+            compatible = "zmk,behavior-mod-morph";
+            label = "NAV_SMARTSHIFT";
+            bindings = <&mo_skQuickRelease 3 0>, <&caps_word>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
         };
     };
 
@@ -60,10 +43,10 @@
             //                                 | Ctrl  |  Cmd  |  Alt  |  L-1  |  spc  |  L-2  |
 
             bindings = <
-&kp TAB   &kp Q  &kp W  &kp F  &kp P            &kp G                                                    &kp J        &kp L            &kp U      &kp Y    &kp SEMI  &kp BACKSPACE
-&kp ESC   &kp A  &kp R  &kp S  &kp T            &kp D                                                    &kp H        &kp N            &kp E      &kp I    &kp O     &kp ENTER
-&kp CAPS  &kp Z  &kp X  &kp C  &kp V            &kp B                                                    &kp K        &kp M            &kp COMMA  &kp DOT  &kp FSLH  &none
-                               &mo_sk 2 LSHIFT  &mo_sk_shift_capsword 3 C_AL_ADDRESS_BOOK  &sl 4  &sl 5  &lt 6 ENTER  &mo_sk 7 RSHIFT
+&kp TAB   &kp Q  &kp W  &kp F  &kp P  &kp G                          &kp J        &kp L  &kp U      &kp Y    &kp SEMI  &kp BACKSPACE
+&kp ESC   &kp A  &kp R  &kp S  &kp T  &kp D                          &kp H        &kp N  &kp E      &kp I    &kp O     &kp ENTER
+&kp CAPS  &kp Z  &kp X  &kp C  &kp V  &kp B                          &kp K        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &none
+                               &none  &nav_smartShift  &sl 4  &sl 5  &lt 6 ENTER  &none
             >;
         };
 
