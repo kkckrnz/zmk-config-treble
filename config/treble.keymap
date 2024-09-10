@@ -9,27 +9,27 @@
 
 / {
     behaviors {
-        skShift: skShift {
+        sk_quickRelease: sk_quickRelease {
             compatible = "zmk,behavior-sticky-key";
-            label = "SKSHIFT";
+            label = "SK_QUICKRELEASE";
             bindings = <&kp>;
             #binding-cells = <1>;
             release-after-ms = <1000>;
             quick-release;
         };
 
-        smartShift: smartShift {
+        mm_smartShift: mm_smartShift {
             compatible = "zmk,behavior-mod-morph";
-            label = "SMARTSHIFT";
-            bindings = <&skShift LEFT_SHIFT>, <&caps_word>;
+            label = "MM_SMARTSHIFT";
+            bindings = <&sk_quickRelease LEFT_SHIFT>, <&caps_word>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
 
-        mo_lang: mo_lang {
+        lt_lang: lt_lang {
             compatible = "zmk,behavior-hold-tap";
-            label = "MO_LANG";
+            label = "LT_LANG";
             bindings = <&mo>, <&lang>;
 
             #binding-cells = <2>;
@@ -37,30 +37,30 @@
             flavor = "tap-preferred";
         };
 
-        tdBSPC: tdBSPC {
+        td_bspc: td_bspc {
             compatible = "zmk,behavior-tap-dance";
-            label = "TDBSPC";
+            label = "TD_BSPC";
             #binding-cells = <0>;
             bindings = <&kp BACKSPACE>, <&kp LG(BACKSPACE)>;
         };
 
-        tdZ: tdZ {
+        td_z: td_z {
             compatible = "zmk,behavior-tap-dance";
-            label = "TDZ";
+            label = "TD_Z";
             #binding-cells = <0>;
             bindings = <&kp LG(Z)>, <&kp LG(LS(Z))>;
         };
 
-        tdV: tdV {
+        td_v: td_v {
             compatible = "zmk,behavior-tap-dance";
-            label = "TDV";
+            label = "TD_V";
             #binding-cells = <0>;
             bindings = <&kp LG(V)>, <&kp LG(LA(V))>, <&kp LG(LA(LS(V)))>;
         };
 
-        mo_sl: mo_sl {
+        lt_sl: lt_sl {
             compatible = "zmk,behavior-hold-tap";
-            label = "MO_SL";
+            label = "LT_SL";
             bindings = <&mo>, <&sl>;
 
             #binding-cells = <2>;
@@ -68,9 +68,9 @@
             flavor = "balanced";
         };
 
-        hrmL: hrmL {
+        mt_hrmL: mt_hrmL {
             compatible = "zmk,behavior-hold-tap";
-            label = "HRML";
+            label = "MT_HRML";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -82,9 +82,9 @@
             hold-trigger-on-release;
         };
 
-        hrmR: hrmR {
+        mt_hrmR: mt_hrmR {
             compatible = "zmk,behavior-hold-tap";
-            label = "HRMR";
+            label = "MT_HRMR";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -94,6 +94,78 @@
             flavor = "balanced";
             hold-trigger-key-positions = <1 2 3 4 5 13 14 15 16 17 25 26 27 28 29 12 37>;
             hold-trigger-on-release;
+        };
+
+        mm_1_plus: mm_1_plus {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_1_PLUS";
+            bindings = <&kp N1>, <&kp PLUS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        mm_2_minus: mm_2_minus {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_2_MINUS";
+            bindings = <&kp N2>, <&kp MINUS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        mm_3_equal: mm_3_equal {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_3_EQUAL";
+            bindings = <&kp N3>, <&kp EQUAL>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        mm_4_percent: mm_4_percent {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_4_PERCENT";
+            bindings = <&kp N4>, <&kp PERCENT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        mm_6_dot: mm_6_dot {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_6_DOT";
+            bindings = <&kp N6>, <&kp DOT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        mm_7_comma: mm_7_comma {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_7_COMMA";
+            bindings = <&kp N7>, <&kp COMMA>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        mm_9_star: mm_9_star {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_9_STAR";
+            bindings = <&kp N9>, <&kp STAR>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        mm_0_slash: mm_0_slash {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_0_SLASH";
+            bindings = <&kp N0>, <&kp SLASH>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
         };
     };
 
@@ -125,10 +197,10 @@
             //                                 | Ctrl  |  Cmd  |  Alt  |  L-1  |  spc  |  L-2  |
 
             bindings = <
-&mo_lang 2 0  &kp Q          &kp W         &kp F         &kp P           &kp G                      &kp J        &kp L           &kp U         &kp Y         &kp COLON      &none
-&smartShift   &hrmL LCTRL A  &hrmL LALT R  &hrmL LGUI S  &hrmL LSHIFT T  &kp D                      &kp M        &hrmR LSHIFT N  &hrmR LGUI E  &hrmR LALT I  &hrmR LCTRL O  &smartShift
-&tog 3        &kp Z          &kp X         &kp C         &kp V           &kp B                      &kp K        &kp H           &kp PERIOD    &kp COMMA     &kp SQT        &tog 3
-                                                         &mo_sl 4 4      &lt 5 ENTER  &none  &none  &lt 8 SPACE  &mo_sl 4 4
+&lt_lang 2 0    &kp Q             &kp W            &kp F            &kp P              &kp G                                &kp J        &kp L              &kp U            &kp Y            &kp COLON         &none
+&mm_smartShift  &mt_hrmL LCTRL A  &mt_hrmL LALT R  &mt_hrmL LGUI S  &mt_hrmL LSHIFT T  &kp D                                &kp M        &mt_hrmR LSHIFT N  &mt_hrmR LGUI E  &mt_hrmR LALT I  &mt_hrmR LCTRL O  &mm_smartShift
+&tog 3          &kp Z             &kp X            &kp C            &kp V              &kp B                                &kp K        &kp H              &kp PERIOD       &kp COMMA        &kp SQT           &tog 3
+                                                                    &lt_sl 4 4         &lt 5 ENTER  &lt_sl 6 6  &lt_sl 7 7  &lt 8 SPACE  &lt_sl 4 4
             >;
         };
 
@@ -158,18 +230,18 @@
         oneHanded {
             bindings = <
 &none   &none    &kp SPACE  &kp RET    &none    &none                    &none             &none       &kp C_BRI_DN       &kp C_BRI_UP     &none       &none
-&none   &kp ESC  &kp TAB    &tdBSPC    &kp DEL  &none                    &none             &kp LEFT    &kp DOWN           &kp UP           &kp RIGHT   &none
-&trans  &tdZ     &kp LG(X)  &kp LG(C)  &tdV     &kp LG(A)                &none             &kp C_PREV  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_NEXT  &trans
+&none   &kp ESC  &kp TAB    &td_bspc   &kp DEL  &none                    &none             &kp LEFT    &kp DOWN           &kp UP           &kp RIGHT   &none
+&trans  &td_z    &kp LG(X)  &kp LG(C)  &td_v    &kp LG(A)                &none             &kp C_PREV  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_NEXT  &trans
                                        &none    &none      &none  &none  &kp C_PLAY_PAUSE  &none
             >;
         };
 
         symbol {
             bindings = <
-&none      &kp SEMI          &kp LBRC         &kp RBRC         &kp DLLR          &kp CARET                  &kp TILDE  &kp HASH           &kp STAR          &kp FSLH          &kp COLON            &none
-&kp UNDER  &hrmL LCTRL BSLH  &hrmL LALT LPAR  &hrmL LGUI RPAR  &hrmL LSHIFT DQT  &kp GRAVE                  &kp EXCL   &hrmR LSHIFT PLUS  &hrmR LGUI MINUS  &hrmR LALT EQUAL  &hrmR LCTRL PERCENT  &kp QMARK
-&none      &kp AT            &kp LBKT         &kp RBKT         &kp AMPS          &kp PIPE                   &kp LT     &kp GT             &kp DOT           &kp COMMA         &kp SQT              &none
-                                                               &trans            &trans     &trans  &trans  &trans     &trans
+&none      &kp SEMI             &kp LBRC            &kp RBRC            &kp DLLR             &kp CARET                  &kp TILDE  &kp HASH              &kp STAR             &kp FSLH             &kp COLON               &none
+&kp UNDER  &mt_hrmL LCTRL BSLH  &mt_hrmL LALT LPAR  &mt_hrmL LGUI RPAR  &mt_hrmL LSHIFT DQT  &kp GRAVE                  &kp EXCL   &mt_hrmR LSHIFT PLUS  &mt_hrmR LGUI MINUS  &mt_hrmR LALT EQUAL  &mt_hrmR LCTRL PERCENT  &kp QMARK
+&none      &kp AT               &kp LBKT            &kp RBKT            &kp AMPS             &kp PIPE                   &kp LT     &kp GT                &kp DOT              &kp COMMA            &kp SQT                 &none
+                                                                        &trans               &trans     &trans  &trans  &trans     &trans
             >;
         };
 
@@ -189,19 +261,19 @@
 
         number {
             bindings = <
-&trans  &none      &none     &none     &none      &none                   &kp STAR  &kp N4  &kp N5  &kp N6  &kp SLASH  &trans
-&trans  &kp LSHFT  &kp LALT  &kp LGUI  &kp LCTRL  &none                   &kp PLUS  &kp N1  &kp N2  &kp N3  &kp MINUS  &trans
-&trans  &none      &none     &none     &none      &none                   &kp DOT   &kp N7  &kp N8  &kp N9  &kp N0     &trans
-                                       &trans     &trans  &trans  &trans  &trans    &trans
+&none  &none      &none     &none     &none      &none                   &none   &none       &mm_9_star   &mm_0_slash  &none          &none
+&none  &sk LSHFT  &sk LALT  &sk LGUI  &sk LCTRL  &none                   &none   &mm_1_plus  &mm_2_minus  &mm_3_equal  &mm_4_percent  &none
+&none  &none      &none     &none     &none      &none                   &none   &kp N5      &mm_6_dot    &mm_7_comma  &kp N8         &none
+                                      &trans     &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         function {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-                                &trans  &trans  &trans  &trans  &trans  &trans
+&kp F16  &kp F12  &kp F11  &kp F10  &kp F9  &kp F13                  &none   &none       &none     &none     &none      &none
+&kp F17  &kp F4   &kp F3   &kp F2   &kp F1  &kp F14                  &none   &sk LSHIFT  &sk LGUI  &sk LALT  &sk LCTRL  &none
+&kp F18  &kp F8   &kp F7   &kp F6   &kp F5  &kp F15                  &none   &none       &none     &none     &none      &none
+                                    &trans  &trans   &trans  &trans  &trans  &trans
             >;
         };
 
