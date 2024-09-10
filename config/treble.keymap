@@ -125,10 +125,10 @@
             //                                 | Ctrl  |  Cmd  |  Alt  |  L-1  |  spc  |  L-2  |
 
             bindings = <
-&mo_lang 2 0  &kp Q          &kp W         &kp F         &kp P           &kp G                &kp J  &kp L           &kp U         &kp Y         &kp COLON      &none
-&smartShift   &hrmL LCTRL A  &hrmL LALT R  &hrmL LGUI S  &hrmL LSHIFT T  &kp D                &kp M  &hrmR LSHIFT N  &hrmR LGUI E  &hrmR LALT I  &hrmR LCTRL O  &smartShift
-&tog 3        &kp Z          &kp X         &kp C         &kp V           &kp B                &kp K  &kp H           &kp PERIOD    &kp COMMA     &kp SQT        &tog 3
-                                                         &mo_sl 4 4      &none  &none  &none  &none  &mo_sl 4 4
+&mo_lang 2 0  &kp Q          &kp W         &kp F         &kp P           &kp G                      &kp J        &kp L           &kp U         &kp Y         &kp COLON      &none
+&smartShift   &hrmL LCTRL A  &hrmL LALT R  &hrmL LGUI S  &hrmL LSHIFT T  &kp D                      &kp M        &hrmR LSHIFT N  &hrmR LGUI E  &hrmR LALT I  &hrmR LCTRL O  &smartShift
+&tog 3        &kp Z          &kp X         &kp C         &kp V           &kp B                      &kp K        &kp H           &kp PERIOD    &kp COMMA     &kp SQT        &tog 3
+                                                         &mo_sl 4 4      &lt 5 ENTER  &none  &none  &lt 8 SPACE  &mo_sl 4 4
             >;
         };
 
@@ -173,15 +173,6 @@
             >;
         };
 
-        macro {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-                                &trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
         navigation {
             // |   `   |   1   |   2   |   3   |   4   |   5   |               |       |       |       |       |       |       |
             // |   '   |   6   |   7   |   8   |   9   |   0   |               |       | Left  | Down  |  Up   | Right |       |
@@ -189,10 +180,10 @@
             //                                 |       |       |       |       |       |       |
 
             bindings = <
-&trans  &none      &none     &none     &none      &none                   &none   &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)  &trans
-&trans  &kp LSHFT  &kp LALT  &kp LGUI  &kp LCTRL  &none                   &none   &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans
-&trans  &none      &none     &none     &none      &none                   &none   &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &trans
-                                       &trans     &trans  &trans  &trans  &trans  &trans
+&none  &none      &none     &none     &none      &none                   &none   &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)  &none
+&none  &kp LSHFT  &kp LALT  &kp LGUI  &kp LCTRL  &none                   &none   &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &none
+&none  &none      &none     &none     &none      &none                   &none   &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &none
+                                      &trans     &trans  &trans  &trans  &trans  &trans
             >;
         };
 
@@ -211,6 +202,15 @@
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
                                 &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        space {
+            bindings = <
+&none  &none    &kp SPACE  &kp RET   &none    &none                   &none   &none      &none     &none     &none      &none
+&none  &kp ESC  &kp TAB    &kp BSPC  &kp DEL  &none                   &none   &kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL  &none
+&none  &none    &none      &none     &none    &none                   &none   &none      &none     &none     &none      &none
+                                     &trans   &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
