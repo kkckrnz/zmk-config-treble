@@ -179,14 +179,7 @@
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
-
-        Enter {
-            bindings = <&kp ENTER>;
-            key-positions = <21 20>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     macros {
         mc_lang: mc_lang {
