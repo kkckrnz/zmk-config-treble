@@ -4,6 +4,7 @@
 
 /* layer-tap */
 // balanced-flavour instead of tap-preferred
+
 &lt {
     quick-tap-ms = <175>;
     flavor = "balanced";
@@ -12,8 +13,8 @@
 / {
     behaviors {
         /* custom stiky key */
-
         // quick-release: deactivates the sticky key on the next key being pressed, as opposed to released
+
         sk_quickRelease: sk_quickRelease {
             compatible = "zmk,behavior-sticky-key";
             label = "SK_QUICKRELEASE";
@@ -24,9 +25,9 @@
         };
 
         /* custom mod-morph */
-
         // single tap: left shift
         // double tap: caps word
+
         mm_smartShift: mm_smartShift {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_SMARTSHIFT";
@@ -38,6 +39,7 @@
 
         // tap        : 1
         // shift + tap: +
+
         mm_1_plus: mm_1_plus {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_1_PLUS";
@@ -49,6 +51,7 @@
 
         // tap        : 2
         // shift + tap: -
+
         mm_2_minus: mm_2_minus {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_2_MINUS";
@@ -60,6 +63,7 @@
 
         // tap        : 3
         // shift + tap: =
+
         mm_3_equal: mm_3_equal {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_3_EQUAL";
@@ -71,6 +75,7 @@
 
         // tap        : 4
         // shift + tap: %
+
         mm_4_percent: mm_4_percent {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_4_PERCENT";
@@ -82,6 +87,7 @@
 
         // tap        : 6
         // shift + tap: .
+
         mm_6_dot: mm_6_dot {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_6_DOT";
@@ -93,6 +99,7 @@
 
         // tap        : 7
         // shift + tap: ,
+
         mm_7_comma: mm_7_comma {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_7_COMMA";
@@ -104,6 +111,7 @@
 
         // tap        : 9
         // shift + tap: *
+
         mm_9_star: mm_9_star {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_9_STAR";
@@ -115,6 +123,7 @@
 
         // tap        : 0
         // shift + tap: /
+
         mm_0_slash: mm_0_slash {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_0_SLASH";
@@ -125,9 +134,9 @@
         };
 
         /* tap-dance */
-
         // single tap: backspace
         // double tap: cmd + backspace 
+
         td_bspc: td_bspc {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_BSPC";
@@ -137,6 +146,7 @@
 
         // single tap: cmd + z
         // double tap: shift + cmd + z
+
         td_z: td_z {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_Z";
@@ -147,6 +157,7 @@
         // single tap: cmd + v
         // double tap: cmd + opt + v
         // triple tap: cmd + opt + shift + v
+
         td_v: td_v {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_V";
@@ -155,9 +166,9 @@
         };
 
         /* custom hold-tap */
-
         // hold: momentary layer
         // tap : mc_lang
+
         lt_lang: lt_lang {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_LANG";
@@ -170,6 +181,7 @@
 
         // hold: momentary layer
         // tap : sticky layer
+
         lt_sl: lt_sl {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_SL";
@@ -183,6 +195,7 @@
         // hold: mod
         // tap : keycode
         // for use with left side
+
         mt_hrmL: mt_hrmL {
             compatible = "zmk,behavior-hold-tap";
             label = "MT_HRML";
@@ -200,6 +213,7 @@
         // hold: mod
         // tap : keycode
         // for use with right side
+
         mt_hrmR: mt_hrmR {
             compatible = "zmk,behavior-hold-tap";
             label = "MT_HRMR";
@@ -216,6 +230,7 @@
 
         // hold: momentary layer
         // tap : mc_toggle
+
         lt_toggle: lt_toggle {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_TOGGLE";
@@ -228,12 +243,15 @@
     };
 
     /* combos*/
+
     combos { compatible = "zmk,combos"; };
 
     /* macros */
+
     macros {
         // 1. toggle qwerty-layer
         // 2. change input source (cmd + shift + space)
+
         mc_lang: mc_lang {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -243,6 +261,7 @@
 
         // 1. toggle toggle-layer
         // 2. send keypress (f19), which is used to indicate toggle status on-screen
+
         mc_toggle: mc_toggle {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -252,6 +271,7 @@
     };
 
     /* keymap */
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -329,10 +349,10 @@
 
         space {
             bindings = <
-&none  &none    &kp SPACE  &kp RET   &none    &none                   &none   &none      &none     &none     &none      &none
-&none  &kp ESC  &kp TAB    &kp BSPC  &kp DEL  &none                   &none   &kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL  &none
-&none  &none    &none      &none     &none    &none                   &none   &none      &none     &none     &none      &none
-                                     &trans   &trans  &trans  &trans  &trans  &trans
+&none  &none    &kp SPACE  &kp ENTER  &none    &none                   &none   &none      &none     &none     &none      &none
+&none  &kp ESC  &kp TAB    &kp BSPC   &kp DEL  &none                   &none   &kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL  &none
+&none  &none    &none      &none      &none    &none                   &none   &none      &none     &none     &none      &none
+                                      &trans   &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
