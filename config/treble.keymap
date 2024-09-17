@@ -273,7 +273,7 @@
         mc_toggle: mc_toggle {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 3 &kp F19>;
+            bindings = <&tog 4 &kp F19>;
             label = "MC_TOGGLE";
         };
     };
@@ -285,10 +285,10 @@
 
         colemak {
             bindings = <
-&lt_lang 2 0    &kp Q             &kp W            &kp F            &kp P              &kp G                                &kp J        &kp L              &kp U            &kp Y            &kp COLON         &lt 2 LG(LC(Q))
+&lt_lang 3 0    &kp Q             &kp W            &kp F            &kp P              &kp G                                &kp J        &kp L              &kp U            &kp Y            &kp COLON         &lt 3 LG(LC(Q))
 &mm_smartShift  &mt_hrmL LCTRL A  &mt_hrmL LALT R  &mt_hrmL LGUI S  &mt_hrmL LSHIFT T  &kp D                                &kp H        &mt_hrmR LSHIFT N  &mt_hrmR LGUI E  &mt_hrmR LALT I  &mt_hrmR LCTRL O  &mm_smartShift
-&lt_toggle 3 0  &kp Z             &kp X            &kp C            &kp V              &kp B                                &kp K        &kp M              &kp PERIOD       &kp COMMA        &kp SQT           &lt_toggle 3 0
-                                                                    &lt_sl 4 4         &lt 5 ENTER  &lt_sl 6 6  &lt_sl 7 7  &lt 8 SPACE  &lt_sl 4 4
+&lt_toggle 4 0  &kp Z             &kp X            &kp C            &kp V              &kp B                                &kp K        &kp M              &kp PERIOD       &kp COMMA        &kp SQT           &lt_toggle 4 0
+                                                                    &lt_sl 5 5         &lt 6 ENTER  &lt_sl 7 7  &lt_sl 8 8  &lt 9 SPACE  &lt_sl 5 5
             >;
         };
 
@@ -301,10 +301,19 @@
             >;
         };
 
+        blank {
+            bindings = <
+&none  &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &mo 3
+&none  &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &none
+                            &none  &none  &none  &none  &none  &none
+            >;
+        };
+
         system {
             bindings = <
 &none  &none  &none  &none  &none  &none                &none       &none         &sys_reset    &bootloader   &none         &none
-&none  &none  &none  &none  &to 9  &to 0                &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none
+&none  &none  &none  &none  &to 2  &to 0                &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none
 &none  &none  &none  &none  &none  &none                &none       &none         &none         &none         &none         &none
                             &none  &none  &none  &none  &none       &none
             >;
@@ -361,15 +370,6 @@
 &none  &kp ESC  &kp TAB    &kp BSPC   &kp DEL  &none                   &none   &kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL  &none
 &none  &none    &none      &none      &none    &none                   &none   &none      &none     &none     &none      &none
                                       &trans   &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        blank {
-            bindings = <
-&none  &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &mo 2
-&none  &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &none
-                            &none  &none  &none  &none  &none  &none
             >;
         };
     };
