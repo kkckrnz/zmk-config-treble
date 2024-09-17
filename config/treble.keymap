@@ -255,7 +255,15 @@
         mc_lang: mc_lang {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 1 &kp LC(LS(SPACE))>;
+            bindings =
+                <&tog 1>,
+                <&macro_press>,
+                <&kp LSHIFT &kp LCTRL>,
+                <&macro_tap>,
+                <&kp SPACE>,
+                <&macro_release>,
+                <&kp LSHIFT &kp LCTRL>;
+
             label = "MC_LANG";
         };
 
@@ -278,18 +286,18 @@
         colemak {
             bindings = <
 &lt_lang 2 0    &kp Q             &kp W            &kp F            &kp P              &kp G                                &kp J        &kp L              &kp U            &kp Y            &kp COLON         &lt 2 LG(LC(Q))
-&mm_smartShift  &mt_hrmL LCTRL A  &mt_hrmL LALT R  &mt_hrmL LGUI S  &mt_hrmL LSHIFT T  &kp D                                &kp M        &mt_hrmR LSHIFT N  &mt_hrmR LGUI E  &mt_hrmR LALT I  &mt_hrmR LCTRL O  &mm_smartShift
-&lt_toggle 3 0  &kp Z             &kp X            &kp C            &kp V              &kp B                                &kp K        &kp H              &kp PERIOD       &kp COMMA        &kp SQT           &lt_toggle 3 0
+&mm_smartShift  &mt_hrmL LCTRL A  &mt_hrmL LALT R  &mt_hrmL LGUI S  &mt_hrmL LSHIFT T  &kp D                                &kp H        &mt_hrmR LSHIFT N  &mt_hrmR LGUI E  &mt_hrmR LALT I  &mt_hrmR LCTRL O  &mm_smartShift
+&lt_toggle 3 0  &kp Z             &kp X            &kp C            &kp V              &kp B                                &kp K        &kp M              &kp PERIOD       &kp COMMA        &kp SQT           &lt_toggle 3 0
                                                                     &lt_sl 4 4         &lt 5 ENTER  &lt_sl 6 6  &lt_sl 7 7  &lt 8 SPACE  &lt_sl 4 4
             >;
         };
 
         qwerty {
             bindings = <
-&trans  &kp Q  &kp W  &kp E  &kp R   &kp T                   &kp Y   &kp U   &kp I       &kp O      &kp P      &trans
-&trans  &kp A  &kp S  &kp D  &kp F   &kp G                   &kp H   &kp J   &kp K       &kp L      &kp COLON  &trans
-&trans  &kp Z  &kp X  &kp C  &kp V   &kp B                   &kp N   &kp M   &kp PERIOD  &kp COMMA  &kp SQT    &trans
-                             &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp Q             &kp W                &kp E            &kp R             &kp T                   &kp Y   &kp U              &kp I            &kp O            &kp P                 &trans
+&trans  &mt_hrmL A LCTRL  &mt_hrmL S LEFT_ALT  &mt_hrmL D LGUI  &mt_hrmL F LSHFT  &kp G                   &kp H   &mt_hrmR J LSHIFT  &mt_hrmR K LGUI  &mt_hrmR L LALT  &mt_hrmR COLON LCTRL  &trans
+&trans  &kp Z             &kp X                &kp C            &kp V             &kp B                   &kp N   &kp M              &kp PERIOD       &kp COMMA        &kp SQT               &trans
+                                                                &trans            &trans  &trans  &trans  &trans  &trans
             >;
         };
 
@@ -304,10 +312,10 @@
 
         toggle {
             bindings = <
-&none   &none    &kp SPACE  &kp ENTER  &none    &none                    &none             &none       &kp C_BRI_DN       &kp C_BRI_UP     &none       &none
-&none   &kp ESC  &kp TAB    &td_bspc   &kp DEL  &none                    &none             &kp LEFT    &kp DOWN           &kp UP           &kp RIGHT   &none
-&tog 3  &td_z    &kp LG(X)  &kp LG(C)  &td_v    &kp LG(A)                &none             &kp C_PREV  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_NEXT  &tog 3
-                                       &none    &none      &none  &none  &kp C_PLAY_PAUSE  &none
+&none     &none    &kp SPACE  &kp ENTER  &none    &none                    &none             &none       &kp C_BRI_DN       &kp C_BRI_UP     &none       &none
+&none     &kp ESC  &kp TAB    &td_bspc   &kp DEL  &none                    &none             &kp LEFT    &kp DOWN           &kp UP           &kp RIGHT   &none
+&mc_lang  &td_z    &kp LG(X)  &kp LG(C)  &td_v    &kp LG(A)                &none             &kp C_PREV  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_NEXT  &mc_lang
+                                         &none    &none      &none  &none  &kp C_PLAY_PAUSE  &none
             >;
         };
 
@@ -323,7 +331,7 @@
         navigation {
             bindings = <
 &none  &none      &none     &none     &none      &none                   &none   &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)  &none
-&none  &kp LSHFT  &kp LALT  &kp LGUI  &kp LCTRL  &none                   &none   &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &none
+&none  &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none                   &none   &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &none
 &none  &none      &none     &none     &none      &none                   &none   &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &none
                                       &trans     &trans  &trans  &trans  &trans  &trans
             >;
@@ -332,7 +340,7 @@
         number {
             bindings = <
 &none  &none      &none     &none     &none      &none                   &none   &none       &mm_9_star   &mm_0_slash  &none          &none
-&none  &sk LSHFT  &sk LALT  &sk LGUI  &sk LCTRL  &none                   &none   &mm_1_plus  &mm_2_minus  &mm_3_equal  &mm_4_percent  &none
+&none  &sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT  &none                   &none   &mm_1_plus  &mm_2_minus  &mm_3_equal  &mm_4_percent  &none
 &none  &none      &none     &none     &none      &none                   &none   &kp N5      &mm_6_dot    &mm_7_comma  &kp N8         &none
                                       &trans     &trans  &trans  &trans  &trans  &trans
             >;
