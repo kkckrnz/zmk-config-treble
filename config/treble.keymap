@@ -336,7 +336,7 @@
         toggle {
             bindings = <
 &none       &none    &kp SPACE  &kp ENTER  &none    &none                    &none             &none       &kp C_BRI_DN       &kp C_BRI_UP     &none       &none
-&none       &kp ESC  &kp TAB    &td_bspc   &kp DEL  &none                    &none             &kp LEFT    &kp DOWN           &kp UP           &kp RIGHT   &none
+&none       &kp ESC  &kp DEL    &td_bspc   &kp TAB  &none                    &none             &kp LEFT    &kp DOWN           &kp UP           &kp RIGHT   &none
 &mc_toggle  &td_z    &kp LG(X)  &kp LG(C)  &td_v    &kp LG(A)                &none             &kp C_PREV  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_NEXT  &mc_toggle
                                            &none    &none      &none  &none  &kp C_PLAY_PAUSE  &none
             >;
@@ -381,7 +381,7 @@
         space {
             bindings = <
 &none  &none    &kp SPACE  &kp ENTER  &none    &none                   &none   &none      &none     &none     &none      &none
-&none  &kp ESC  &kp TAB    &kp BSPC   &kp DEL  &none                   &none   &kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL  &none
+&none  &kp ESC  &kp DEL    &kp BSPC   &kp TAB  &none                   &none   &kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL  &none
 &none  &none    &none      &none      &none    &none                   &none   &none      &none     &none     &none      &none
                                       &trans   &trans  &trans  &trans  &trans  &trans
             >;
