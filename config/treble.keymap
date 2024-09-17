@@ -348,7 +348,7 @@
 
         number {
             bindings = <
-&none  &none      &mo 5     &mo 6     &none      &none                   &none   &none       &mm_9_star   &mm_0_slash  &none          &none
+&none  &none      &lt 5 A   &mo 6     &none      &none                   &none   &none       &mm_9_star   &mm_0_slash  &none          &none
 &none  &sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT  &none                   &none   &mm_1_plus  &mm_2_minus  &mm_3_equal  &mm_4_percent  &none
 &none  &none      &none     &none     &none      &none                   &none   &kp N5      &mm_6_dot    &mm_7_comma  &kp N8         &none
                                       &trans     &trans  &trans  &trans  &trans  &trans
