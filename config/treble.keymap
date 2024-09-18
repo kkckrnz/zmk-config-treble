@@ -372,27 +372,27 @@
 
         symbol {
             bindings = <
-&none      &kp SEMI             &kp LBRC            &kp RBRC            &kp DLLR             &kp CARET                  &kp TILDE  &kp HASH              &kp STAR             &kp FSLH             &kp COLON               &none
+&trans     &kp SEMI             &kp LBRC            &kp RBRC            &kp DLLR             &kp CARET                  &kp TILDE  &kp HASH              &kp STAR             &kp FSLH             &kp COLON               &trans
 &kp UNDER  &mt_hrmL LCTRL BSLH  &mt_hrmL LALT LPAR  &mt_hrmL LGUI RPAR  &mt_hrsL LSHIFT DQT  &kp GRAVE                  &kp EXCL   &mt_hrsR LSHIFT PLUS  &mt_hrmR LGUI MINUS  &mt_hrmR LALT EQUAL  &mt_hrmR LCTRL PERCENT  &kp QMARK
-&none      &kp AT               &kp LBKT            &kp RBKT            &kp AMPS             &kp PIPE                   &kp LT     &kp GT                &kp DOT              &kp COMMA            &kp SQT                 &none
+&trans     &kp AT               &kp LBKT            &kp RBKT            &kp AMPS             &kp PIPE                   &kp LT     &kp GT                &kp DOT              &kp COMMA            &kp SQT                 &trans
                                                                         &trans               &trans     &trans  &trans  &trans     &trans
             >;
         };
 
         number {
             bindings = <
-&none  &none      &none     &none     &none      &none                   &none   &none       &mm_9_star   &mm_0_slash  &none          &none
+&none  &none      &none     &none     &none      &none                   &none   &none       &mm_9_star   &mm_0_slash  &none          &trans
 &none  &sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT  &mo 7                   &none   &mm_1_plus  &mm_2_minus  &mm_3_equal  &mm_4_percent  &none
-&none  &none      &none     &none     &none      &none                   &none   &kp N5      &mm_6_dot    &mm_7_comma  &kp N8         &none
+&none  &none      &none     &none     &none      &none                   &none   &kp N5      &mm_6_dot    &mm_7_comma  &kp N8         &trans
                                       &trans     &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         navigation {
             bindings = <
-&none  &none      &none     &none     &none      &none                   &none   &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)  &none
+&none  &none      &none     &none     &none      &none                   &none   &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)  &trans
 &none  &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none                   &none   &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &none
-&none  &none      &none     &none     &none      &none                   &none   &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &none
+&none  &none      &none     &none     &none      &none                   &none   &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &trans
                                       &trans     &trans  &trans  &trans  &trans  &trans
             >;
         };
