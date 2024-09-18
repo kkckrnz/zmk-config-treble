@@ -8,7 +8,6 @@
 &lt {
     quick-tap-ms = <175>;
     flavor = "balanced";
-    require-prior-idle-ms = <150>;
 };
 
 / {
@@ -303,7 +302,7 @@
 &lt 3 LG(LC(Q))  &kp Q             &kp W            &kp F            &kp P              &kp G                                &kp J        &kp L              &kp U            &kp Y            &kp COLON         &lt_lang 3 0
 &mm_smartShift   &mt_hrmL LCTRL A  &mt_hrmL LALT R  &mt_hrmL LGUI S  &mt_hrmL LSHIFT T  &kp D                                &kp H        &mt_hrmR LSHIFT N  &mt_hrmR LGUI E  &mt_hrmR LALT I  &mt_hrmR LCTRL O  &mm_smartShift
 &lt_toggle 4 0   &kp Z             &kp X            &kp C            &kp V              &kp B                                &kp K        &kp M              &kp PERIOD       &kp COMMA        &kp SQT           &lt_toggle 4 0
-                                                                     &lt_sl 5 5         &lt 7 ENTER  &lt_sl 6 6  &lt_sl 8 8  &lt 9 SPACE  &lt_sl 5 5
+                                                                     &lt_sl 5 5         &lt 7 SPACE  &lt_sl 6 6  &lt_sl 8 8  &lt 9 SPACE  &lt_sl 5 5
             >;
         };
 
