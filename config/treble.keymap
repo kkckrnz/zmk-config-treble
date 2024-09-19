@@ -337,10 +337,10 @@
 
         colemak {
             bindings = <
-&lt_lang 3 0  &kp Q             &kp W            &kp F            &kp P              &kp G                                   &kp J        &kp L              &kp U            &kp Y            &kp COLON         &lt 3 BACKSPACE
-&lt_sl 5 5    &mt_hrmL LCTRL A  &mt_hrmL LALT R  &mt_hrmL LGUI S  &mt_hrsL LSHIFT T  &kp D                                   &kp H        &mt_hrsR LSHIFT N  &mt_hrmR LGUI E  &mt_hrmR LALT I  &mt_hrmR LCTRL O  &lt_sl 5 5
-&none         &kp Z             &kp X            &kp C            &kp V              &kp B                                   &kp K        &kp M              &kp PERIOD       &kp COMMA        &kp SQT           &none
-                                                                  &none              &mt_shift 7 0  &lt_sl 6 6  &lt 4 ENTER  &lt 9 SPACE  &lt_sl 8 8
+&lt 3 ESC  &kp Q             &kp W            &kp F            &kp P              &kp G                                &kp J         &kp L              &kp U            &kp Y            &kp COLON         &lt 3 BACKSPACE
+&none      &mt_hrmL LCTRL A  &mt_hrmL LALT R  &mt_hrmL LGUI S  &mt_hrsL LSHIFT T  &kp D                                &kp H         &mt_hrsR LSHIFT N  &mt_hrmR LGUI E  &mt_hrmR LALT I  &mt_hrmR LCTRL O  &none
+&none      &kp Z             &kp X            &kp C            &kp V              &kp B                                &kp K         &kp M              &kp PERIOD       &kp COMMA        &kp SQT           &none
+                                                               &lt_sl 5 5         &mt_shift 7 0  &kp TAB  &lt 4 ENTER  &lt 10 SPACE  &lt_sl 5 5
             >;
         };
 
@@ -422,6 +422,15 @@
 &none  &kp A  &kp A  &kp A  &kp A   &none                   &none   &kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL  &none
 &none  &none  &none  &none  &none   &none                   &none   &none      &none     &none     &none      &none
                             &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        numR {
+            bindings = <
+&trans  &trans  &kp N0  &kp N9  &trans  &trans                  &trans  &trans     &trans    &trans    &trans     &trans
+&trans  &kp N4  &kp N3  &kp N2  &kp N1  &trans                  &trans  &kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL  &trans
+&trans  &kp N8  &kp N7  &kp N6  &kp N5  &trans                  &trans  &trans     &trans    &trans    &trans     &trans
+                                &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
