@@ -26,9 +26,9 @@
         // single tap: left shift
         // double tap: caps word
 
-        mm_smartShift: mm_smartShift {
+        mm_shift: mm_shift {
             compatible = "zmk,behavior-mod-morph";
-            label = "MM_SMARTSHIFT";
+            label = "MM_SHIFT";
             bindings = <&sk_quickRelease LEFT_SHIFT>, <&caps_word>;
 
             #binding-cells = <0>;
@@ -134,14 +134,6 @@
         /* tap-dance */
         // single tap: backspace
         // double tap: cmd + backspace 
-
-        td_bspc: td_bspc {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_BSPC";
-            #binding-cells = <0>;
-            bindings = <&kp BACKSPACE>, <&kp LG(BACKSPACE)>;
-        };
-
         // single tap: cmd + z
         // double tap: shift + cmd + z
 
@@ -166,30 +158,8 @@
         /* custom hold-tap */
         // hold: momentary layer
         // tap : mc_lang
-
-        lt_lang: lt_lang {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LT_LANG";
-            bindings = <&mo>, <&mc_lang>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-        };
-
         // hold: momentary layer
         // tap : sticky layer
-
-        lt_sl: lt_sl {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LT_SL";
-            bindings = <&mo>, <&sl>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-        };
-
         // hold: mod
         // tap : keycode
         // for use with left side
@@ -222,69 +192,54 @@
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
             flavor = "tap-preferred";
-            hold-trigger-key-positions = <1 2 3 4 5 13 14 15 16 17 25 26 27 28 29 12 37 38>;
+            hold-trigger-key-positions = <1 2 3 4 5 13 14 15 16 17 25 26 27 28 29 12 37 0>;
             hold-trigger-on-release;
         };
 
         // hold: momentary layer
         // tap : mc_toggle
 
-        lt_toggle: lt_toggle {
+        lt_shift: lt_shift {
             compatible = "zmk,behavior-hold-tap";
-            label = "LT_TOGGLE";
-            bindings = <&mo>, <&mc_toggle>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-        };
-
-        mt_hrsL: mt_hrsL {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MT_HRSL";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            require-prior-idle-ms = <150>;
-            hold-trigger-key-positions = <6 7 8 9 10 18 19 20 21 22 30 31 32 33 34 23 40 39>;
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            hold-trigger-on-release;
-        };
-
-        mt_hrsR: mt_hrsR {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MT_HRSR";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
-            flavor = "tap-preferred";
-            hold-trigger-key-positions = <1 2 3 4 5 13 14 15 16 17 25 26 27 28 29 12 37 38>;
-            hold-trigger-on-release;
-        };
-
-        mt_shift: mt_shift {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MT_SHIFT";
-            bindings = <&mo>, <&mm_smartShift>;
+            label = "LT_SHIFT";
+            bindings = <&mo>, <&mm_shift>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
 
-        lt_sym: lt_sym {
+        lt_hold: lt_hold {
             compatible = "zmk,behavior-hold-tap";
-            label = "LT_SYM";
+            label = "LT_HOLD";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <175>;
+        };
+
+        lt_space: lt_space {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_SPACE";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "tap-preferred";
+        };
+
+        ht_bspc: ht_bspc {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_BSPC";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            flavor = "tap-preferred";
         };
     };
 
@@ -319,7 +274,7 @@
         mc_toggle: mc_toggle {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 4 &kp F19>;
+            bindings = <&tog 0 &kp F19>;
             label = "MC_TOGGLE";
         };
 
@@ -345,100 +300,91 @@
 
         colemak {
             bindings = <
-&lt 3 ESC      &kp Q             &kp W            &kp F            &kp P              &kp G                        &kp J      &kp L              &kp U            &kp Y            &kp COLON         &lt 3 BACKSPACE
-&lt_sym 5 TAB  &mt_hrmL LCTRL A  &mt_hrmL LALT R  &mt_hrmL LGUI S  &mt_hrsL LSHIFT T  &kp D                        &kp H      &mt_hrsR LSHIFT N  &mt_hrmR LGUI E  &mt_hrmR LALT I  &mt_hrmR LCTRL O  &lt_sym 5 ENTER
-&none          &kp Z             &kp X            &kp C            &kp V              &kp B                        &kp K      &kp M              &kp PERIOD       &kp COMMA        &kp SQT           &none
-                                                                   &sl 6              &mt_shift 7 0  &none  &none  &kp SPACE  &kp ESC
+&kp ESC         &kp Q             &kp W            &kp F            &kp P              &kp G                                          &kp J              &kp L              &kp U            &kp Y            &kp COLON         &kp BACKSPACE
+&lt_hold 9 TAB  &mt_hrmL LCTRL A  &mt_hrmL LALT R  &mt_hrmL LGUI S  &mt_hrmL LSHIFT T  &kp D                                          &kp H              &mt_hrmR LSHIFT N  &mt_hrmR LGUI E  &mt_hrmR LALT I  &mt_hrmR LCTRL O  &lt_hold 9 ENTER
+&none           &kp Z             &kp X            &kp C            &kp V              &kp B                                          &kp K              &kp M              &kp COMMA        &kp DOT          &kp SQT           &none
+                                                                    &sl 3              &lt_shift 4 0  &mo 5  &lt_hold 6 C_PLAY_PAUSE  &lt_space 7 SPACE  &sl 8
             >;
         };
 
         qwerty {
             bindings = <
 &trans  &kp Q             &kp W            &kp E            &kp R             &kp T                   &kp Y   &kp U             &kp I            &kp O            &kp P                 &trans
-&trans  &mt_hrmL LCTRL A  &mt_hrmL LALT S  &mt_hrmL LGUI D  &mt_hrsL LSHFT F  &kp G                   &kp H   &mt_hrsR LSHFT J  &mt_hrmR LGUI K  &mt_hrmR LALT L  &mt_hrmR LCTRL COLON  &trans
-&trans  &kp Z             &kp X            &kp C            &kp V             &kp B                   &kp N   &kp M             &kp PERIOD       &kp COMMA        &kp SQT               &trans
+&trans  &mt_hrmL LCTRL A  &mt_hrmL LALT S  &mt_hrmL LGUI D  &mt_hrmL LSHFT F  &kp G                   &kp H   &mt_hrmR LSHFT J  &mt_hrmR LGUI K  &mt_hrmR LALT L  &mt_hrmR LCTRL COLON  &trans
+&trans  &kp Z             &kp X            &kp C            &kp V             &kp B                   &kp N   &kp M             &kp COMMA        &kp DOT          &kp SQT               &trans
                                                             &trans            &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         blank {
             bindings = <
-&none  &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &mo 3
+&none  &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &to 0
 &none  &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &none
 &none  &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &none
                             &none  &none  &none  &none  &none  &none
             >;
         };
 
-        system {
+        number {
             bindings = <
-&none  &none  &mc_2  &mc_1  &none  &none                &none       &none         &sys_reset    &bootloader   &none         &none
-&none  &none  &none  &none  &to 2  &to 0                &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none
-&none  &none  &none  &none  &none  &none                &none       &none         &none         &none         &none         &none
-                            &none  &none  &none  &none  &none       &none
+&trans   &none      &mo 5     &mo 4     &none      &none                   &none   &none       &mm_9_star   &mm_0_slash  &none          &trans
+&kp TAB  &sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT  &none                   &none   &mm_1_plus  &mm_2_minus  &mm_3_equal  &mm_4_percent  &kp ENTER
+&trans   &none      &none     &none     &none      &none                   &none   &kp N5      &mm_6_dot    &mm_7_comma  &kp N8         &trans
+                                        &trans     &trans  &trans  &trans  &trans  &trans
             >;
         };
 
-        toggle {
+        navigation {
             bindings = <
-&none  &none    &kp SPACE  &kp ENTER  &none    &none                              &none             &none       &kp C_BRI_DN       &kp C_BRI_UP     &none       &none
-&none  &kp ESC  &kp DEL    &td_bspc   &kp TAB  &none                              &none             &kp LEFT    &kp DOWN           &kp UP           &kp RIGHT   &none
-&none  &td_z    &kp LG(X)  &kp LG(C)  &td_v    &kp LG(A)                          &none             &kp C_PREV  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_NEXT  &none
-                                      &none    &none      &mc_toggle  &mc_toggle  &kp C_PLAY_PAUSE  &none
+&trans   &none      &none     &none     &none      &none                   &none   &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)  &trans
+&kp TAB  &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none                   &none   &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &kp ENTER
+&trans   &none      &none     &none     &none      &none                   &none   &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &trans
+                                        &trans     &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        system {
+            bindings = <
+&none  &none  &none      &ht_bspc LG(BACKSPACE) BACKSPACE  &none  &none                &none       &none         &sys_reset    &bootloader   &none         &none
+&none  &td_z  &kp LG(X)  &kp LG(C)                         &td_v  &none                &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none
+&none  &none  &none      &none                             &none  &none                &none       &none         &none         &none         &none         &none
+                                                           &none  &none  &none  &none  &none       &none
+            >;
+        };
+
+        media {
+            bindings = <
+&none  &none  &none  &none  &none  &none                   &none  &none       &kp C_BRI_DN       &kp C_BRI_UP     &none       &none
+&none  &none  &to 2  &to 1  &to 0  &mc_lang                &none  &kp LEFT    &kp DOWN           &kp UP           &kp RIGHT   &none
+&none  &none  &none  &none  &none  &none                   &none  &kp C_PREV  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_NEXT  &none
+                            &none  &none     &none  &none  &none  &none
+            >;
+        };
+
+        function1 {
+            bindings = <
+&trans  &none   &kp F10  &kp F9  &none   &none                   &none   &none      &none     &none     &none      &trans
+&trans  &kp F4  &kp F3   &kp F2  &kp F1  &none                   &none   &kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL  &trans
+&trans  &kp F8  &kp F7   &kp F6  &kp F5  &none                   &none   &none      &none     &none     &none      &trans
+                                 &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        function2 {
+            bindings = <
+&trans  &none    &kp F20  &kp F19  &none    &none                   &none   &none       &none     &none     &none      &trans
+&trans  &kp F14  &kp F13  &kp F12  &kp F11  &none                   &none   &sk LSHIFT  &sk LGUI  &sk LALT  &sk LCTRL  &trans
+&trans  &kp F18  &kp F17  &kp F16  &kp F15  &none                   &none   &none       &none     &none     &none      &trans
+                                   &trans   &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         symbol {
             bindings = <
 &none      &kp SEMI             &kp LBRC            &kp RBRC            &kp DLLR             &kp CARET                  &kp TILDE  &kp HASH              &kp STAR             &kp FSLH             &kp COLON               &kp BACKSPACE
-&kp UNDER  &mt_hrmL LCTRL BSLH  &mt_hrmL LALT LPAR  &mt_hrmL LGUI RPAR  &mt_hrsL LSHIFT DQT  &kp GRAVE                  &kp EXCL   &mt_hrsR LSHIFT PLUS  &mt_hrmR LGUI MINUS  &mt_hrmR LALT EQUAL  &mt_hrmR LCTRL PERCENT  &kp QMARK
+&kp UNDER  &mt_hrmL LCTRL BSLH  &mt_hrmL LALT LPAR  &mt_hrmL LGUI RPAR  &mt_hrmL LSHIFT DQT  &kp GRAVE                  &kp EXCL   &mt_hrmR LSHIFT PLUS  &mt_hrmR LGUI MINUS  &mt_hrmR LALT EQUAL  &mt_hrmR LCTRL PERCENT  &kp QMARK
 &none      &kp AT               &kp LBKT            &kp RBKT            &kp AMPS             &kp PIPE                   &kp LT     &kp GT                &kp DOT              &kp COMMA            &kp SQT                 &none
                                                                         &trans               &trans     &trans  &trans  &trans     &trans
-            >;
-        };
-
-        number {
-            bindings = <
-&none  &none      &none     &none     &none      &none                   &none   &none       &mm_9_star   &mm_0_slash  &none          &kp BACKSPACE
-&none  &sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT  &mo 7                   &none   &mm_1_plus  &mm_2_minus  &mm_3_equal  &mm_4_percent  &none
-&none  &none      &none     &none     &none      &none                   &none   &kp N5      &mm_6_dot    &mm_7_comma  &kp N8         &trans
-                                      &trans     &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        navigation {
-            bindings = <
-&none  &none      &none     &none     &none      &none                   &none   &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)  &kp BACKSPACE
-&none  &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none                   &none   &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &none
-&none  &none      &none     &none     &none      &none                   &none   &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &trans
-                                      &trans     &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        function {
-            bindings = <
-&kp F16  &kp F12  &kp F11  &kp F10  &kp F9  &kp F13                  &none   &none       &none     &none     &none      &none
-&kp F17  &kp F4   &kp F3   &kp F2   &kp F1  &kp F14                  &none   &sk LSHIFT  &sk LGUI  &sk LALT  &sk LCTRL  &none
-&kp F18  &kp F8   &kp F7   &kp F6   &kp F5  &kp F15                  &none   &none       &none     &none     &none      &none
-                                    &trans  &trans   &trans  &trans  &trans  &trans
-            >;
-        };
-
-        space {
-            bindings = <
-&none  &none  &kp A  &kp A  &none   &none                   &none   &none      &none     &none     &none      &none
-&none  &kp A  &kp A  &kp A  &kp A   &none                   &none   &kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL  &none
-&none  &none  &none  &none  &none   &none                   &none   &none      &none     &none     &none      &none
-                            &trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        numR {
-            bindings = <
-&trans  &trans  &kp N0  &kp N9  &trans  &trans                  &trans  &trans     &trans    &trans    &trans     &trans
-&trans  &kp N4  &kp N3  &kp N2  &kp N1  &trans                  &trans  &kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL  &trans
-&trans  &kp N8  &kp N7  &kp N6  &kp N5  &trans                  &trans  &trans     &trans    &trans    &trans     &trans
-                                &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
