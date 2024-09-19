@@ -6,8 +6,6 @@
 // balanced-flavour instead of tap-preferred
 
 &lt {
-    quick-tap-ms = <175>;
-    flavor = "balanced";
 };
 
 / {
@@ -278,6 +276,16 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
+
+        lt_sym: lt_sym {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_SYM";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+        };
     };
 
     /* combos*/
@@ -337,10 +345,10 @@
 
         colemak {
             bindings = <
-&lt 3 ESC  &kp Q             &kp W            &kp F            &kp P              &kp G                        &kp J      &kp L              &kp U            &kp Y            &kp COLON         &lt 3 BACKSPACE
-&lt 5 TAB  &mt_hrmL LCTRL A  &mt_hrmL LALT R  &mt_hrmL LGUI S  &mt_hrsL LSHIFT T  &kp D                        &kp H      &mt_hrsR LSHIFT N  &mt_hrmR LGUI E  &mt_hrmR LALT I  &mt_hrmR LCTRL O  &lt 5 ENTER
-&none      &kp Z             &kp X            &kp C            &kp V              &kp B                        &kp K      &kp M              &kp PERIOD       &kp COMMA        &kp SQT           &none
-                                                               &sl 6              &mt_shift 7 0  &none  &none  &kp SPACE  &kp ESC
+&lt 3 ESC      &kp Q             &kp W            &kp F            &kp P              &kp G                        &kp J      &kp L              &kp U            &kp Y            &kp COLON         &lt 3 BACKSPACE
+&lt_sym 5 TAB  &mt_hrmL LCTRL A  &mt_hrmL LALT R  &mt_hrmL LGUI S  &mt_hrsL LSHIFT T  &kp D                        &kp H      &mt_hrsR LSHIFT N  &mt_hrmR LGUI E  &mt_hrmR LALT I  &mt_hrmR LCTRL O  &lt_sym 5 ENTER
+&none          &kp Z             &kp X            &kp C            &kp V              &kp B                        &kp K      &kp M              &kp PERIOD       &kp COMMA        &kp SQT           &none
+                                                                   &sl 6              &mt_shift 7 0  &none  &none  &kp SPACE  &kp ESC
             >;
         };
 
