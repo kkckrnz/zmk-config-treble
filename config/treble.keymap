@@ -6,6 +6,7 @@
     behaviors {
         /* custom stiky key */
         // quick-release: deactivates the sticky key on the next key being pressed, as opposed to released
+
         sk_quickRelease: sk_quickRelease {
             compatible = "zmk,behavior-sticky-key";
             label = "SK_QUICKRELEASE";
@@ -16,6 +17,7 @@
         };
 
         /* custom mod-morph */
+
         mm_shift: mm_shift {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_SHIFT";
@@ -116,6 +118,7 @@
         };
 
         /* tap-dance */
+
         td_z: td_z {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_Z";
@@ -131,6 +134,7 @@
         };
 
         /* custom hold-tap */
+
         mt_hrmL: mt_hrmL {
             compatible = "zmk,behavior-hold-tap";
             label = "MT_HRML";
@@ -205,6 +209,7 @@
     };
 
     /* macros */
+
     macros {
         mc_lang: mc_lang {
             compatible = "zmk,behavior-macro";
@@ -266,10 +271,10 @@
 
         blank {
             bindings = <
-&none  &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &to 0
-&none  &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none                &none  &none  &none  &none  &none  &none
-                            &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none                 &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none                 &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none                 &none  &none  &none  &none  &none  &none
+                            &none  &none  &none  &trans  &none  &none
             >;
         };
 
@@ -331,7 +336,7 @@
             bindings = <
 &trans     &kp SEMI             &kp LBRC            &kp RBRC            &kp DLLR             &kp CARET                  &kp TILDE  &kp HASH              &kp STAR             &kp FSLH             &kp COLON               &trans
 &kp UNDER  &mt_hrmL LCTRL BSLH  &mt_hrmL LALT LPAR  &mt_hrmL LGUI RPAR  &mt_hrmL LSHIFT DQT  &kp GRAVE                  &kp EXCL   &mt_hrmR LSHIFT PLUS  &mt_hrmR LGUI MINUS  &mt_hrmR LALT EQUAL  &mt_hrmR LCTRL PERCENT  &kp QMARK
-&trans     &kp AT               &kp LBKT            &kp RBKT            &kp AMPS             &kp PIPE                   &kp LT     &kp GT                &kp DOT              &kp COMMA            &kp SQT                 &trans
+&trans     &kp AT               &kp LBKT            &kp RBKT            &kp AMPS             &kp PIPE                   &kp LT     &kp GT                &kp COMMA            &kp DOT              &kp SQT                 &trans
                                                                         &trans               &trans     &trans  &trans  &trans     &trans
             >;
         };
@@ -342,6 +347,15 @@
 &none  &none  &none  &none  &none  &none                &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none
 &none  &none  &none  &none  &none  &none                &none       &none         &none         &none         &none         &none
                             &none  &none  &none  &none  &none       &none
+            >;
+        };
+
+        numR {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+                                &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
