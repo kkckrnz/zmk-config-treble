@@ -364,10 +364,10 @@
 
         mouse {
             bindings = <
-&none  &none  &none      &ht_bspc LG(BACKSPACE) BACKSPACE  &none  &none                  &none  &none  &none  &none  &none  &none
-&none  &td_z  &kp LG(X)  &kp LG(C)                         &td_v  &none                  &none  &none  &none  &none  &none  &none
-&none  &none  &none      &none                             &none  &none                  &none  &none  &none  &none  &none  &none
-                                                           &none  &none  &trans  &trans  &none  &none
+&none  &none  &none      &ht_bspc LG(BACKSPACE) BACKSPACE  &none  &none                      &none  &none  &none  &none  &none  &none
+&none  &td_z  &kp LG(X)  &kp LG(C)                         &td_v  &kp LG(A)                  &none  &none  &none  &none  &none  &none
+&none  &none  &none      &none                             &none  &none                      &none  &none  &none  &none  &none  &none
+                                                           &none  &none      &trans  &trans  &none  &none
             >;
         };
 
