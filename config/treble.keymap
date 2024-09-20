@@ -314,11 +314,11 @@
             >;
         };
 
-        numR {
+        number {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &none   &kp N0  &kp N9  &none   &none                   &none   &none      &none     &none     &none      &trans
+&trans  &kp N4  &kp N3  &kp N2  &kp N1  &none                   &none   &kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL  &trans
+&trans  &kp N8  &kp N7  &kp N6  &kp N5  &none                   &none   &none      &trans    &trans    &none      &trans
                                 &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
@@ -350,7 +350,7 @@
             >;
         };
 
-        number {
+        numberleft {
             bindings = <
 &trans  &none      &mo 3     &mo 4     &none      &none                   &none   &none       &mm_9_star   &mm_0_slash  &none          &trans
 &trans  &sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT  &none                   &none   &mm_1_plus  &mm_2_minus  &mm_3_equal  &mm_4_percent  &trans
