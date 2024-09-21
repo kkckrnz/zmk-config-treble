@@ -316,10 +316,10 @@
 
         number {
             bindings = <
-&trans  &none   &kp N0  &kp N9  &none   &none                   &none   &none      &none     &none     &none      &trans
-&trans  &kp N4  &kp N3  &kp N2  &kp N1  &none                   &none   &kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL  &trans
-&trans  &kp N8  &kp N7  &kp N6  &kp N5  &none                   &none   &none      &trans    &trans    &none      &trans
-                                &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &none   &kp N0       &kp N9       &none   &none                   &none   &none      &none     &none     &none      &trans
+&trans  &kp N4  &mm_3_equal  &mm_2_minus  &kp N1  &none                   &none   &kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL  &trans
+&trans  &kp N8  &kp N7       &kp N6       &kp N5  &none                   &none   &none      &trans    &trans    &none      &trans
+                                          &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
