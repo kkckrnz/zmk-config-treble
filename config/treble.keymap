@@ -263,10 +263,10 @@
 
         colemak {
             bindings = <
-&kp ESC    &kp Q             &kp W            &kp F            &kp P              &kp G                                                         &kp J              &kp L              &kp U            &kp Y            &kp COLON         &mm_bspc
-&mm_shift  &mt_hrmL LCTRL A  &mt_hrmL LALT R  &mt_hrmL LGUI S  &mt_hrmL LSHIFT T  &kp D                                                         &kp H              &mt_hrmR LSHIFT N  &mt_hrmR LGUI E  &mt_hrmR LALT I  &mt_hrmR LCTRL O  &mm_shift
-&mc_lang   &kp Z             &kp C            &kp X            &kp V              &kp B                                                         &kp K              &kp M              &kp COMMA        &kp DOT          &kp SQT           &kp C_PLAY_PAUSE
-                                                               &sl 3              &lt_balanced 4 ENTER  &lt_balanced 5 TAB  &lt_balanced 6 TAB  &lt_space 7 SPACE  &sl 3
+&kp ESC    &kp Q             &kp W            &kp F            &kp P              &kp G                                                               &kp J              &kp L              &kp U            &kp Y            &kp COLON         &mm_bspc
+&mm_shift  &mt_hrmL LCTRL A  &mt_hrmL LALT R  &mt_hrmL LGUI S  &mt_hrmL LSHIFT T  &kp D                                                               &kp H              &mt_hrmR LSHIFT N  &mt_hrmR LGUI E  &mt_hrmR LALT I  &mt_hrmR LCTRL O  &mm_shift
+&kp ESC    &kp Z             &kp C            &kp X            &kp V              &kp B                                                               &kp K              &kp M              &kp COMMA        &kp DOT          &kp SQT           &kp BACKSPACE
+                                                               &sl 3              &lt_balanced 4 ENTER  &lt_balanced 5 TAB  &lt_balanced 6 BACKSPACE  &lt_space 7 SPACE  &sl 3
             >;
         };
 
