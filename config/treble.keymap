@@ -194,6 +194,7 @@
             require-prior-idle-ms = <100>;
             flavor = "hold-preferred";
             hold-trigger-key-positions = <16 15 14 13 28 27 26 25 3 2>;
+            hold-trigger-on-release;
         };
 
         ht_bspc: ht_bspc {
