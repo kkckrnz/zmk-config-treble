@@ -153,6 +153,19 @@
 
             tapping-term-ms = <200>;
         };
+
+        lt_symR: lt_symR {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_SYMR";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            require-prior-idle-ms = <100>;
+            flavor = "hold-preferred";
+            hold-trigger-key-positions = <16 15 14 13 28 27 26 25 3 2 17 29 12>;
+            hold-trigger-on-release;
+        };
     };
 
     /* macros */
@@ -217,7 +230,7 @@
 &kp ESC    &kp Q             &kp W            &kp F            &kp P              &kp G                                                               &kp J            &kp L              &kp U            &kp Y            &kp Z             &none
 &mm_shift  &mt_hrmL LCTRL A  &mt_hrmL LALT R  &mt_hrmL LGUI S  &mt_hrmL LSHIFT T  &kp D                                                               &kp H            &mt_hrmR LSHIFT N  &mt_hrmR LGUI E  &mt_hrmR LALT I  &mt_hrmR LCTRL O  &mm_shift
 &sl 3      &mm_colon         &kp C            &kp X            &kp V              &kp B                                                               &kp K            &kp M              &td_comma        &kp DOT          &kp APOS          &sl 3
-                                                               &sl 3              &lt_balanced 4 ENTER  &lt_balanced 5 TAB  &lt_balanced 6 BACKSPACE  &lt_num 7 SPACE  &sl 3
+                                                               &sl 3              &lt_balanced 4 ENTER  &lt_balanced 5 TAB  &lt_balanced 6 BACKSPACE  &lt_num 7 SPACE  &lt_symR 3 A
             >;
         };
 
