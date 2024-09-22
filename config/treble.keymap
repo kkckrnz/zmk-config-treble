@@ -255,6 +255,8 @@
             #binding-cells = <0>;
             bindings = <&kp COMMA &kp SPACE>;
             label = "MC_SPACE";
+            wait-ms = <1>;
+            tap-ms = <1>;
         };
     };
 
