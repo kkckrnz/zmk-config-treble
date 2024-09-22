@@ -223,7 +223,7 @@
             #binding-cells = <0>;
             bindings = <&kp COMMA>, <&mc_space>;
 
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
         };
     };
 
