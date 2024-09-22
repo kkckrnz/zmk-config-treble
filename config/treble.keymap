@@ -27,78 +27,6 @@
             mods = <(MOD_LSFT)>;
         };
 
-        mm_1_plus: mm_1_plus {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_1_PLUS";
-            bindings = <&kp N1>, <&kp PLUS>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        mm_2_minus: mm_2_minus {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_2_MINUS";
-            bindings = <&kp N2>, <&kp MINUS>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        mm_3_equal: mm_3_equal {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_3_EQUAL";
-            bindings = <&kp N3>, <&kp EQUAL>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        mm_4_percent: mm_4_percent {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_4_PERCENT";
-            bindings = <&kp N4>, <&kp PERCENT>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        mm_6_dot: mm_6_dot {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_6_DOT";
-            bindings = <&kp N6>, <&kp DOT>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        mm_7_comma: mm_7_comma {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_7_COMMA";
-            bindings = <&kp N7>, <&kp COMMA>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        mm_9_star: mm_9_star {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_9_STAR";
-            bindings = <&kp N9>, <&kp STAR>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        mm_0_slash: mm_0_slash {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_0_SLASH";
-            bindings = <&kp N0>, <&kp SLASH>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
         mm_space: mm_space {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_SPACE";
@@ -313,10 +241,10 @@
 
         symbol {
             bindings = <
-&trans     &kp SEMI             &kp LBRC            &kp RBRC            &kp DLLR             &kp CARET                  &kp TILDE  &kp HASH              &kp STAR             &kp FSLH             &kp COLON               &trans
-&kp UNDER  &mt_hrmL LCTRL BSLH  &mt_hrmL LALT LPAR  &mt_hrmL LGUI RPAR  &mt_hrmL LSHIFT DQT  &kp GRAVE                  &kp EXCL   &mt_hrmR LSHIFT PLUS  &mt_hrmR LGUI MINUS  &mt_hrmR LALT EQUAL  &mt_hrmR LCTRL PERCENT  &kp QMARK
-&trans     &kp AT               &kp LBKT            &kp RBKT            &kp AMPS             &kp PIPE                   &kp LT     &kp GT                &kp COMMA            &kp DOT              &kp SQT                 &trans
-                                                                        &trans               &trans     &trans  &trans  &trans     &trans
+&trans     &none              &kp LBRC            &kp RBRC            &none                   &none                      &none          &none                        &kp STAR             &kp FSLH             &none                &trans
+&kp UNDER  &mt_hrmL LCTRL AT  &mt_hrmL LALT LPAR  &mt_hrmL LGUI RPAR  &mt_hrmL LSHIFT DOLLAR  &kp GRAVE                  &kp AMPERSAND  &mt_hrmR LSHIFT EXCLAMATION  &mt_hrmR LGUI MINUS  &mt_hrmR LALT EQUAL  &mt_hrmR LCTRL PLUS  &kp QMARK
+&trans     &kp TILDE          &kp LBKT            &kp RBKT            &kp BACKSLASH           &kp HASH                   &kp PIPE       &kp LESS_THAN                &kp CARET            &kp PERCENT          &kp GREATER_THAN     &trans
+                                                                      &trans                  &trans     &trans  &trans  &trans         &trans
             >;
         };
 
@@ -362,33 +290,6 @@
 &none  &none  &none  &none  &none  &none                &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none
 &none  &none  &none  &none  &none  &none                &none       &none         &none         &none         &none         &none
                             &none  &none  &none  &none  &none       &none
-            >;
-        };
-
-        function1 {
-            bindings = <
-&trans  &none   &kp F10  &kp F9  &none   &none                   &none   &none      &none     &none     &none      &trans
-&trans  &kp F4  &kp F3   &kp F2  &kp F1  &none                   &none   &kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL  &trans
-&trans  &kp F8  &kp F7   &kp F6  &kp F5  &none                   &none   &none      &none     &none     &none      &trans
-                                 &trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        function2 {
-            bindings = <
-&trans  &none    &kp F20  &kp F19  &none    &none                   &none   &none       &none     &none     &none      &trans
-&trans  &kp F14  &kp F13  &kp F12  &kp F11  &none                   &none   &sk LSHIFT  &sk LGUI  &sk LALT  &sk LCTRL  &trans
-&trans  &kp F18  &kp F17  &kp F16  &kp F15  &none                   &none   &none       &none     &none     &none      &trans
-                                   &trans   &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        numberleft {
-            bindings = <
-&trans  &none      &mo 3     &mo 4     &none      &none                   &none   &none       &mm_9_star   &mm_0_slash  &none          &trans
-&trans  &sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT  &none                   &none   &mm_1_plus  &mm_2_minus  &mm_3_equal  &mm_4_percent  &trans
-&trans  &none      &none     &none     &none      &none                   &none   &kp N5      &mm_6_dot    &mm_7_comma  &kp N8         &trans
-                                       &trans     &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
