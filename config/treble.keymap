@@ -30,7 +30,7 @@
         mm_space: mm_space {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_SPACE";
-            bindings = <&kp SPACE>, <&mc_space>;
+            bindings = <&kp SPACE>, <&mc_comma>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
@@ -112,9 +112,9 @@
             flavor = "balanced";
         };
 
-        lt_space: lt_space {
+        lt_num: lt_num {
             compatible = "zmk,behavior-hold-tap";
-            label = "LT_SPACE";
+            label = "LT_NUM";
             bindings = <&mo>, <&mm_space>;
 
             #binding-cells = <2>;
@@ -149,7 +149,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_COMMA";
             #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&mc_space>;
+            bindings = <&mc_comma>, <&kp COMMA>;
 
             tapping-term-ms = <200>;
         };
@@ -187,7 +187,7 @@
             label = "MC_2";
         };
 
-        mc_space: mc_space {
+        mc_comma: mc_space {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp COMMA &kp SPACE>;
@@ -214,10 +214,10 @@
 
         colemak {
             bindings = <
-&kp ESC    &kp Q             &kp W            &kp F            &kp P              &kp G                                                               &kp J              &kp L              &kp U            &kp Y            &kp Z             &none
-&mm_shift  &mt_hrmL LCTRL A  &mt_hrmL LALT R  &mt_hrmL LGUI S  &mt_hrmL LSHIFT T  &kp D                                                               &kp H              &mt_hrmR LSHIFT N  &mt_hrmR LGUI E  &mt_hrmR LALT I  &mt_hrmR LCTRL O  &mm_shift
-&kp ESC    &mm_colon         &kp C            &kp X            &kp V              &kp B                                                               &kp K              &kp M              &none            &kp DOT          &kp COMMA         &kp APOS
-                                                               &sl 3              &lt_balanced 4 ENTER  &lt_balanced 5 TAB  &lt_balanced 6 BACKSPACE  &lt_space 7 SPACE  &sl 3
+&kp ESC    &kp Q             &kp W            &kp F            &kp P              &kp G                                                               &kp J            &kp L              &kp U            &kp Y            &kp Z             &none
+&mm_shift  &mt_hrmL LCTRL A  &mt_hrmL LALT R  &mt_hrmL LGUI S  &mt_hrmL LSHIFT T  &kp D                                                               &kp H            &mt_hrmR LSHIFT N  &mt_hrmR LGUI E  &mt_hrmR LALT I  &mt_hrmR LCTRL O  &mm_shift
+&kp ESC    &mm_colon         &kp C            &kp X            &kp V              &kp B                                                               &kp K            &kp M              &td_comma        &kp DOT          &kp APOS          &none
+                                                               &sl 3              &lt_balanced 4 ENTER  &lt_balanced 5 TAB  &lt_balanced 6 BACKSPACE  &lt_num 7 SPACE  &sl 3
             >;
         };
 
