@@ -27,82 +27,10 @@
             mods = <(MOD_LSFT)>;
         };
 
-        mm_1_plus: mm_1_plus {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_1_PLUS";
-            bindings = <&kp N1>, <&kp PLUS>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        mm_2_minus: mm_2_minus {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_2_MINUS";
-            bindings = <&kp N2>, <&kp MINUS>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        mm_3_equal: mm_3_equal {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_3_EQUAL";
-            bindings = <&kp N3>, <&kp EQUAL>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        mm_4_percent: mm_4_percent {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_4_PERCENT";
-            bindings = <&kp N4>, <&kp PERCENT>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        mm_6_dot: mm_6_dot {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_6_DOT";
-            bindings = <&kp N6>, <&kp DOT>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        mm_7_comma: mm_7_comma {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_7_COMMA";
-            bindings = <&kp N7>, <&kp COMMA>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        mm_9_star: mm_9_star {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_9_STAR";
-            bindings = <&kp N9>, <&kp STAR>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        mm_0_slash: mm_0_slash {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_0_SLASH";
-            bindings = <&kp N0>, <&kp SLASH>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
         mm_space: mm_space {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_SPACE";
-            bindings = <&kp SPACE>, <&mc_space>;
+            bindings = <&kp SPACE>, <&mc_comma>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
@@ -184,16 +112,17 @@
             flavor = "balanced";
         };
 
-        lt_space: lt_space {
+        lt_num: lt_num {
             compatible = "zmk,behavior-hold-tap";
-            label = "LT_SPACE";
+            label = "LT_NUM";
             bindings = <&mo>, <&mm_space>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
-            flavor = "tap-preferred";
+            require-prior-idle-ms = <100>;
+            flavor = "hold-preferred";
+            hold-trigger-key-positions = <16 15 14 13 28 27 26 25 3 2>;
+            hold-trigger-on-release;
         };
 
         ht_bspc: ht_bspc {
@@ -205,6 +134,37 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <175>;
             flavor = "tap-preferred";
+        };
+
+        mm_colon: mm_colon {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_COLON";
+            bindings = <&kp COLON>, <&kp SEMI>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        td_comma: td_comma {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_COMMA";
+            #binding-cells = <0>;
+            bindings = <&mc_comma>, <&kp COMMA>;
+
+            tapping-term-ms = <200>;
+        };
+
+        lt_symR: lt_symR {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_SYMR";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            require-prior-idle-ms = <100>;
+            flavor = "hold-preferred";
+            hold-trigger-key-positions = <16 15 14 13 28 27 26 25 3 2 17 29 12>;
+            hold-trigger-on-release;
         };
     };
 
@@ -240,11 +200,25 @@
             label = "MC_2";
         };
 
-        mc_space: mc_space {
+        mc_comma: mc_space {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp COMMA &kp SPACE>;
             label = "MC_SPACE";
+            wait-ms = <1>;
+            tap-ms = <1>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        bspc {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <9 8>;
+            layers = <0 3 4 7>;
+            require-prior-idle-ms = <100>;
+            timeout-ms = <75>;
         };
     };
 
@@ -253,10 +227,10 @@
 
         colemak {
             bindings = <
-&kp ESC   &kp Q             &kp W            &kp F            &kp P              &kp G                                                    &kp J              &kp L              &kp U            &kp Y            &kp COLON         &mm_bspc
-&sl 9     &mt_hrmL LCTRL A  &mt_hrmL LALT R  &mt_hrmL LGUI S  &mt_hrmL LSHIFT T  &kp D                                                    &kp H              &mt_hrmR LSHIFT N  &mt_hrmR LGUI E  &mt_hrmR LALT I  &mt_hrmR LCTRL O  &sl 9
-&mc_lang  &kp Z             &kp X            &kp C            &kp V              &kp B                                                    &kp K              &kp M              &kp COMMA        &kp DOT          &kp SQT           &kp C_PLAY_PAUSE
-                                                              &sl 3              &lt_shift 4 0  &lt_balanced 5 TAB  &lt_balanced 6 ENTER  &lt_space 7 SPACE  &sl 8
+&kp ESC    &kp Q             &kp W            &kp F            &kp P              &kp G                                                               &kp J            &kp L              &kp U            &kp Y            &kp Z             &none
+&mm_shift  &mt_hrmL LCTRL A  &mt_hrmL LALT R  &mt_hrmL LGUI S  &mt_hrmL LSHIFT T  &kp D                                                               &kp H            &mt_hrmR LSHIFT N  &mt_hrmR LGUI E  &mt_hrmR LALT I  &mt_hrmR LCTRL O  &mm_shift
+&sl 3      &mm_colon         &kp C            &kp X            &kp V              &kp B                                                               &kp K            &kp M              &td_comma        &kp DOT          &kp COMMA         &kp APOS
+                                                               &sl 3              &lt_balanced 4 ENTER  &lt_balanced 5 TAB  &lt_balanced 6 BACKSPACE  &lt_num 7 SPACE  &lt_symR 3 A
             >;
         };
 
@@ -278,12 +252,12 @@
             >;
         };
 
-        number {
+        symbol {
             bindings = <
-&trans  &none      &mo 9     &mo 4     &none      &none                   &none   &none       &mm_9_star   &mm_0_slash  &none          &trans
-&trans  &sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT  &none                   &none   &mm_1_plus  &mm_2_minus  &mm_3_equal  &mm_4_percent  &trans
-&trans  &none      &none     &none     &none      &none                   &none   &kp N5      &mm_6_dot    &mm_7_comma  &kp N8         &trans
-                                       &trans     &trans  &trans  &trans  &trans  &trans
+&trans     &none              &kp LBRC            &kp RBRC            &none                   &none                      &none          &none                        &kp STAR             &kp FSLH             &none                &trans
+&kp UNDER  &mt_hrmL LCTRL AT  &mt_hrmL LALT LPAR  &mt_hrmL LGUI RPAR  &mt_hrmL LSHIFT DOLLAR  &kp GRAVE                  &kp AMPERSAND  &mt_hrmR LSHIFT EXCLAMATION  &mt_hrmR LGUI MINUS  &mt_hrmR LALT EQUAL  &mt_hrmR LCTRL PLUS  &kp QMARK
+&trans     &kp TILDE          &kp LBKT            &kp RBKT            &kp BACKSLASH           &kp HASH                   &kp PIPE       &kp LESS_THAN                &kp CARET            &kp PERCENT          &kp GREATER_THAN     &trans
+                                                                      &trans                  &trans     &trans  &trans  &trans         &trans
             >;
         };
 
@@ -314,30 +288,12 @@
             >;
         };
 
-        function1 {
+        number {
             bindings = <
-&trans  &none   &kp F10  &kp F9  &none   &none                   &none   &none      &none     &none     &none      &trans
-&trans  &kp F4  &kp F3   &kp F2  &kp F1  &none                   &none   &kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL  &trans
-&trans  &kp F8  &kp F7   &kp F6  &kp F5  &none                   &none   &none      &none     &none     &none      &trans
-                                 &trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        function2 {
-            bindings = <
-&trans  &none    &kp F20  &kp F19  &none    &none                   &none   &none       &none     &none     &none      &trans
-&trans  &kp F14  &kp F13  &kp F12  &kp F11  &none                   &none   &sk LSHIFT  &sk LGUI  &sk LALT  &sk LCTRL  &trans
-&trans  &kp F18  &kp F17  &kp F16  &kp F15  &none                   &none   &none       &none     &none     &none      &trans
-                                   &trans   &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        symbol {
-            bindings = <
-&trans     &kp SEMI             &kp LBRC            &kp RBRC            &kp DLLR             &kp CARET                  &kp TILDE  &kp HASH              &kp STAR             &kp FSLH             &kp COLON               &trans
-&kp UNDER  &mt_hrmL LCTRL BSLH  &mt_hrmL LALT LPAR  &mt_hrmL LGUI RPAR  &mt_hrmL LSHIFT DQT  &kp GRAVE                  &kp EXCL   &mt_hrmR LSHIFT PLUS  &mt_hrmR LGUI MINUS  &mt_hrmR LALT EQUAL  &mt_hrmR LCTRL PERCENT  &kp QMARK
-&trans     &kp AT               &kp LBKT            &kp RBKT            &kp AMPS             &kp PIPE                   &kp LT     &kp GT                &kp COMMA            &kp DOT              &kp SQT                 &trans
-                                                                        &trans               &trans     &trans  &trans  &trans     &trans
+&trans  &none   &kp N0  &kp N9  &none   &none                   &none   &none      &none     &none     &none      &trans
+&trans  &kp N4  &kp N3  &kp N2  &kp N1  &none                   &none   &kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL  &trans
+&trans  &kp N8  &kp N7  &kp N6  &kp N5  &none                   &none   &none      &trans    &trans    &none      &trans
+                                &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
@@ -349,15 +305,6 @@
                             &none  &none  &none  &none  &none       &none
             >;
         };
-
-        numR {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-                                &trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
     };
 
     conditional_layers {
@@ -365,7 +312,7 @@
 
         system {
             if-layers = <5 6>;
-            then-layer = <10>;
+            then-layer = <8>;
         };
     };
 };
