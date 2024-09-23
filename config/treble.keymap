@@ -21,10 +21,10 @@
         mm_shift: mm_shift {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_SHIFT";
-            bindings = <&sk_quickRelease LEFT_SHIFT>, <&caps_word>;
+            bindings = <&sk_quickRelease RIGHT_SHIFT>, <&caps_word>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_RSFT)>;
         };
 
         mm_space: mm_space {
@@ -166,6 +166,15 @@
             hold-trigger-key-positions = <16 15 14 13 28 27 26 25 3 2 17 29 12>;
             hold-trigger-on-release;
         };
+
+        mm_dot: mm_dot {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_DOT";
+            bindings = <&kp DOT>, <&kp COLON>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT)>;
+        };
     };
 
     /* macros */
@@ -229,7 +238,7 @@
             bindings = <
 &kp ESC    &kp Q             &kp W            &kp F            &kp P              &kp G                                                               &kp J            &kp L              &kp U            &kp Y            &kp Z             &none
 &mm_shift  &mt_hrmL LCTRL A  &mt_hrmL LALT R  &mt_hrmL LGUI S  &mt_hrmL LSHIFT T  &kp D                                                               &kp H            &mt_hrmR LSHIFT N  &mt_hrmR LGUI E  &mt_hrmR LALT I  &mt_hrmR LCTRL O  &mm_shift
-&sl 3      &kp COMMA         &kp C            &kp X            &kp V              &kp B                                                               &kp K            &kp M              &mc_comma        &kp DOT          &kp COMMA         &kp APOS
+&sl 3      &kp COMMA         &kp C            &kp X            &kp V              &kp B                                                               &kp K            &kp M              &mc_comma        &mm_dot          &kp COMMA         &kp APOS
                                                                &sl 3              &lt_balanced 4 ENTER  &lt_balanced 5 TAB  &lt_balanced 6 BACKSPACE  &lt_num 7 SPACE  &lt_symR 3 A
             >;
         };
