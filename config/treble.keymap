@@ -291,7 +291,7 @@
             bindings = <&kp BACKSPACE>;
             key-positions = <9 8>;
             layers = <0 3 4 7 1>;
-            require-prior-idle-ms = <75>;
+            require-prior-idle-ms = <0>;
             timeout-ms = <200>;
         };
 
