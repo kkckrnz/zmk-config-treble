@@ -14,6 +14,7 @@
             #binding-cells = <1>;
             release-after-ms = <1000>;
             quick-release;
+            ignore-modifiers;
         };
 
         /* custom mod-morph */
