@@ -257,6 +257,11 @@
             require-prior-idle-ms = <75>;
             timeout-ms = <50>;
         };
+
+        test {
+            bindings = <&kp A>;
+            key-positions = <20 21>;
+        };
     };
 
     keymap {
