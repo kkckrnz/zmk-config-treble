@@ -123,7 +123,6 @@
             flavor = "hold-preferred";
             hold-trigger-key-positions = <16 15 14 13 28 27 26 25 3 2>;
             hold-trigger-on-release;
-            quick-tap-ms = <175>;
         };
 
         ht_bspc: ht_bspc {
