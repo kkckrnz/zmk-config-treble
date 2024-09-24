@@ -194,6 +194,15 @@
             #binding-cells = <0>;
             mods = <(MOD_RSFT)>;
         };
+
+        mm_underscore: mm_underscore {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_UNDERSCORE";
+            bindings = <&kp UNDER>, <&kp GRAVE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT)>;
+        };
     };
 
     /* macros */
@@ -244,7 +253,7 @@
         bspc {
             bindings = <&kp BACKSPACE>;
             key-positions = <9 8>;
-            layers = <0 3 4 7>;
+            layers = <0 3 4 7 1>;
             require-prior-idle-ms = <100>;
             timeout-ms = <75>;
         };
@@ -257,7 +266,7 @@
             bindings = <
 &kp ESC    &kp Q             &kp W            &kp F            &kp P              &kp Z                                                               &kp J            &kp L              &kp U            &kp Y            &mm_apos          &none
 &mm_shift  &mt_hrmL LCTRL A  &mt_hrmL LALT R  &mt_hrmL LGUI S  &mt_hrmL LSHIFT T  &kp D                                                               &kp H            &mt_hrmR LSHIFT N  &mt_hrmR LGUI E  &mt_hrmR LALT I  &mt_hrmR LCTRL O  &mm_shift
-&none      &kp X             &kp C            &kp V            &kp G              &kp B                                                               &kp K            &kp M              &kp UNDER        &mm_dot          &mm_comma         &none
+&kp TAB    &kp X             &kp C            &kp V            &kp G              &kp B                                                               &kp K            &kp M              &mm_underscore   &mm_dot          &mm_comma         &kp TAB
                                                                &sl 3              &lt_balanced 4 ENTER  &lt_balanced 5 TAB  &lt_balanced 6 BACKSPACE  &lt_num 7 SPACE  &lt_symR 3 A
             >;
         };
@@ -282,9 +291,9 @@
 
         symbol {
             bindings = <
-&trans  &none              &kp LBRC            &kp RBRC            &kp DOLLAR                     &none                          &none        &kp CARET                    &kp STAR             &kp FSLH             &none                       &trans
+&trans  &none              &kp LBRC            &kp RBRC            &kp DOLLAR                     &none                          &none        &kp CARET                    &kp STAR             &kp FSLH             &kp TILDE                   &trans
 &trans  &mt_hrmL LCTRL AT  &mt_hrmL LALT LPAR  &mt_hrmL LGUI RPAR  &mt_hrmL LSHIFT DOUBLE_QUOTES  &kp AMPERSAND                  &kp PERCENT  &mt_hrmR LSHIFT EXCLAMATION  &mt_hrmR LGUI MINUS  &mt_hrmR LALT EQUAL  &mt_hrmR LCTRL EXCLAMATION  &trans
-&trans  &kp TILDE          &kp LBKT            &kp RBKT            &kp BACKSLASH                  &kp PIPE                       &none        &kp LESS_THAN                &kp HASH             &kp DOT              &kp GREATER_THAN            &trans
+&trans  &none              &kp LBKT            &kp RBKT            &kp BACKSLASH                  &kp PIPE                       &none        &kp LESS_THAN                &kp HASH             &kp DOT              &kp GREATER_THAN            &trans
                                                                    &trans                         &trans         &trans  &trans  &trans       &trans
             >;
         };
