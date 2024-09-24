@@ -268,7 +268,7 @@
         };
 
         test {
-            bindings = <&test LA(LEFT_GUI) LG(DOT)>;
+            bindings = <&test LA(LEFT_GUI) DOT>;
             key-positions = <20 21>;
             require-prior-idle-ms = <75>;
             layers = <0>;
