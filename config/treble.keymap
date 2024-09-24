@@ -115,7 +115,7 @@
         lt_num: lt_num {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_NUM";
-            bindings = <&mo>, <&mm_space>;
+            bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -184,6 +184,15 @@
             #binding-cells = <0>;
             mods = <(MOD_RSFT)>;
         };
+
+        mm_apos: mm_apos {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_APOS";
+            bindings = <&kp APOS>, <&kp QUESTION>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT)>;
+        };
     };
 
     /* macros */
@@ -245,9 +254,9 @@
 
         colemak {
             bindings = <
-&kp ESC    &kp Q             &kp W            &kp F            &kp P              &kp G                                                               &kp J            &kp L              &kp U            &kp Y            &kp Z             &none
+&kp ESC    &none             &kp W            &kp F            &kp P              &kp G                                                               &kp J            &kp L              &kp U            &kp Y            &kp BACKSPACE     &none
 &mm_shift  &mt_hrmL LCTRL A  &mt_hrmL LALT R  &mt_hrmL LGUI S  &mt_hrmL LSHIFT T  &kp D                                                               &kp H            &mt_hrmR LSHIFT N  &mt_hrmR LGUI E  &mt_hrmR LALT I  &mt_hrmR LCTRL O  &mm_shift
-&sl 3      &kp COMMA         &kp C            &kp X            &kp V              &kp B                                                               &kp K            &kp M              &mc_comma        &mm_dot          &mm_comma         &kp APOS
+&kp Q      &kp X             &kp C            &kp Z            &kp V              &kp B                                                               &kp K            &kp M              &kp UNDER        &mm_dot          &mm_comma         &mm_apos
                                                                &sl 3              &lt_balanced 4 ENTER  &lt_balanced 5 TAB  &lt_balanced 6 BACKSPACE  &lt_num 7 SPACE  &lt_symR 3 A
             >;
         };
@@ -272,10 +281,10 @@
 
         symbol {
             bindings = <
-&trans     &none              &kp LBRC            &kp RBRC            &none                   &none                      &none          &none                        &kp STAR             &kp FSLH             &none                &trans
-&kp UNDER  &mt_hrmL LCTRL AT  &mt_hrmL LALT LPAR  &mt_hrmL LGUI RPAR  &mt_hrmL LSHIFT DOLLAR  &kp GRAVE                  &kp AMPERSAND  &mt_hrmR LSHIFT EXCLAMATION  &mt_hrmR LGUI MINUS  &mt_hrmR LALT EQUAL  &mt_hrmR LCTRL PLUS  &kp QMARK
-&trans     &kp TILDE          &kp LBKT            &kp RBKT            &kp BACKSLASH           &kp HASH                   &kp PIPE       &kp LESS_THAN                &kp CARET            &kp PERCENT          &kp GREATER_THAN     &trans
-                                                                      &trans                  &trans     &trans  &trans  &trans         &trans
+&trans  &none              &kp LBRC            &kp RBRC            &kp DOLLAR                     &none                          &none        &kp CARET                    &kp STAR             &kp FSLH             &none                       &trans
+&trans  &mt_hrmL LCTRL AT  &mt_hrmL LALT LPAR  &mt_hrmL LGUI RPAR  &mt_hrmL LSHIFT DOUBLE_QUOTES  &kp AMPERSAND                  &kp PERCENT  &mt_hrmR LSHIFT EXCLAMATION  &mt_hrmR LGUI MINUS  &mt_hrmR LALT EQUAL  &mt_hrmR LCTRL EXCLAMATION  &trans
+&trans  &kp TILDE          &kp LBKT            &kp RBKT            &kp BACKSLASH                  &kp PIPE                       &none        &kp LESS_THAN                &kp HASH             &kp DOT              &kp GREATER_THAN            &trans
+                                                                   &trans                         &trans         &trans  &trans  &trans       &trans
             >;
         };
 
