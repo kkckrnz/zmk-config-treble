@@ -268,10 +268,11 @@
         };
 
         test {
-            bindings = <&test LA(LEFT_GUI) DOT>;
+            bindings = <&mt_hrmR LA(LEFT_GUI) BACKSPACE>;
             key-positions = <20 21>;
             require-prior-idle-ms = <75>;
-            layers = <0>;
+            layers = <0 1 3 4 7>;
+            timeout-ms = <50>;
         };
     };
 
