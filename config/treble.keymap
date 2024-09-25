@@ -90,6 +90,7 @@
             flavor = "hold-preferred";
             hold-trigger-key-positions = <1 2 3 4 5 13 14 15 16 17 25 26 27 28 29 37 0>;
             hold-trigger-on-release;
+            hold-while-undecided;
         };
 
         lt_shift: lt_shift {
@@ -349,9 +350,9 @@
 
         symbol {
             bindings = <
-&trans  &none                       &kp LBRC                     &kp RBRC                     &kp DOLLAR                              &none                          &none        &kp CARET                             &kp STAR                      &kp FSLH                      &kp TILDE                            &trans
-&trans  &mt_hrmL_balanced LCTRL AT  &mt_hrmL_balanced LALT LPAR  &mt_hrmL_balanced LGUI RPAR  &mt_hrmL_balanced LSHIFT DOUBLE_QUOTES  &kp AMPERSAND                  &kp PERCENT  &mt_hrmR_balanced LSHIFT EXCLAMATION  &mt_hrmR_balanced LGUI MINUS  &mt_hrmR_balanced LALT EQUAL  &mt_hrmR_balanced LCTRL EXCLAMATION  &trans
-&trans  &none                       &kp LBKT                     &kp RBKT                     &kp BACKSLASH                           &kp PIPE                       &none        &kp LESS_THAN                         &kp HASH                      &kp DOT                       &kp GREATER_THAN                     &trans
+&trans  &none                       &kp LBRC                     &kp RBRC                     &kp DOLLAR                              &none                          &none        &kp CARET                      &kp STAR                      &kp FSLH                      &kp TILDE                            &trans
+&trans  &mt_hrmL_balanced LCTRL AT  &mt_hrmL_balanced LALT LPAR  &mt_hrmL_balanced LGUI RPAR  &mt_hrmL_balanced LSHIFT DOUBLE_QUOTES  &kp AMPERSAND                  &kp PERCENT  &mt_hrmR_balanced LSHIFT PLUS  &mt_hrmR_balanced LGUI MINUS  &mt_hrmR_balanced LALT EQUAL  &mt_hrmR_balanced LCTRL EXCLAMATION  &trans
+&trans  &none                       &kp LBKT                     &kp RBKT                     &kp BACKSLASH                           &kp PIPE                       &none        &kp LESS_THAN                  &kp HASH                      &kp DOT                       &kp GREATER_THAN                     &trans
                                                                                               &trans                                  &trans         &trans  &trans  &trans       &trans
             >;
         };
