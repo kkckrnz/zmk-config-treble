@@ -347,10 +347,10 @@
 
         symbol {
             bindings = <
-&trans  &none                       &kp LBRC                     &kp RBRC                     &kp DOLLAR                              &none                          &none        &kp CARET                  &kp STAR                  &kp FSLH                  &kp TILDE                        &trans
-&trans  &mt_hrmL_balanced LCTRL AT  &mt_hrmL_balanced LALT LPAR  &mt_hrmL_balanced LGUI RPAR  &mt_hrmL_balanced LSHIFT DOUBLE_QUOTES  &kp AMPERSAND                  &kp PERCENT  &mt_hrmR_hold LSHIFT PLUS  &mt_hrmR_hold LGUI MINUS  &mt_hrmR_hold LALT EQUAL  &mt_hrmR_hold LCTRL EXCLAMATION  &trans
-&trans  &none                       &kp LBKT                     &kp RBKT                     &kp BACKSLASH                           &kp PIPE                       &none        &kp LESS_THAN              &kp HASH                  &kp DOT                   &kp GREATER_THAN                 &trans
-                                                                                              &trans                                  &trans         &trans  &trans  &trans       &trans
+&trans  &none                  &kp LBRC                &kp RBRC                &kp DOLLAR                         &none                          &none        &kp CARET                 &kp STAR                 &kp FSLH                 &kp TILDE                       &trans
+&trans  &mt_hrmL_tap LCTRL AT  &mt_hrmL_tap LALT LPAR  &mt_hrmL_tap LGUI RPAR  &mt_hrmL_tap LSHIFT DOUBLE_QUOTES  &kp AMPERSAND                  &kp PERCENT  &mt_hrmR_tap LSHIFT PLUS  &mt_hrmR_tap LGUI MINUS  &mt_hrmR_tap LALT EQUAL  &mt_hrmR_tap LCTRL EXCLAMATION  &trans
+&trans  &none                  &kp LBKT                &kp RBKT                &kp BACKSLASH                      &kp PIPE                       &none        &kp LESS_THAN             &kp HASH                 &kp DOT                  &kp GREATER_THAN                &trans
+                                                                               &trans                             &trans         &trans  &trans  &trans       &trans
             >;
         };
 
