@@ -6,9 +6,9 @@
     behaviors {
         /* stiky key */
 
-        sk_quickRelease: sk_quickRelease {
+        sk_quick: sk_quick {
             compatible = "zmk,behavior-sticky-key";
-            label = "SK_QUICKRELEASE";
+            label = "SK_QUICK";
             bindings = <&kp>;
             #binding-cells = <1>;
             release-after-ms = <1000>;
@@ -20,7 +20,7 @@
         mm_shiftR: mm_shiftR {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_SHIFTR";
-            bindings = <&sk_quickRelease RIGHT_SHIFT>, <&kp CAPS>;
+            bindings = <&sk_quick RIGHT_SHIFT>, <&kp CAPS>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
@@ -29,7 +29,7 @@
         mm_shiftL: mm_shiftL {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_SHIFTL";
-            bindings = <&sk_quickRelease LEFT_SHIFT>, <&caps_word>;
+            bindings = <&sk_quick LEFT_SHIFT>, <&caps_word>;
 
             #binding-cells = <0>;
             mods = <(MOD_RSFT)>;
