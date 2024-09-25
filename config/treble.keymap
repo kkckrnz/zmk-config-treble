@@ -212,15 +212,6 @@
             mods = <(MOD_LSFT)>;
         };
 
-        td_comma: td_comma {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_COMMA";
-            #binding-cells = <0>;
-            bindings = <&mc_comma>, <&kp COMMA>;
-
-            tapping-term-ms = <200>;
-        };
-
         lt_symR: lt_symR {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_SYMR";
