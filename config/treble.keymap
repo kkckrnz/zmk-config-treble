@@ -251,6 +251,7 @@
             flavor = "hold-preferred";
             hold-trigger-key-positions = <19 20 21 22 40>;
             require-prior-idle-ms = <125>;
+            hold-trigger-on-release;
         };
     };
 
