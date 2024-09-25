@@ -30,10 +30,10 @@
         mm_space: mm_space {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_SPACE";
-            bindings = <&kp SPACE>, <&mc_comma>;
+            bindings = <&kp SPACE>, <&kp UNDER>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_RSFT)>;
         };
 
         mm_bspc: mm_bspc {
@@ -112,7 +112,7 @@
         lt_num: lt_num {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_NUM";
-            bindings = <&mo>, <&kp>;
+            bindings = <&mo>, <&mm_space>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
