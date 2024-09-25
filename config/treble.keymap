@@ -72,7 +72,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             require-prior-idle-ms = <200>;
-            hold-trigger-key-positions = <6 7 8 9 10 18 19 20 21 22 30 31 32 33 34 40>;
+            hold-trigger-key-positions = <6 7 8 9 10 18 19 20 21 22 30 31 32 33 34 40 11>;
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             hold-trigger-on-release;
@@ -88,7 +88,7 @@
             quick-tap-ms = <175>;
             require-prior-idle-ms = <200>;
             flavor = "balanced";
-            hold-trigger-key-positions = <1 2 3 4 5 13 14 15 16 17 25 26 27 28 29 37>;
+            hold-trigger-key-positions = <1 2 3 4 5 13 14 15 16 17 25 26 27 28 29 37 0>;
             hold-trigger-on-release;
         };
 
@@ -221,7 +221,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             require-prior-idle-ms = <200>;
-            hold-trigger-key-positions = <6 7 8 9 10 18 19 20 21 22 30 31 32 33 34 40>;
+            hold-trigger-key-positions = <6 7 8 9 10 18 19 20 21 22 30 31 32 33 34 40 11>;
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             hold-trigger-on-release;
@@ -237,7 +237,7 @@
             quick-tap-ms = <175>;
             require-prior-idle-ms = <200>;
             flavor = "tap-preferred";
-            hold-trigger-key-positions = <1 2 3 4 5 13 14 15 16 17 25 26 27 28 29 37>;
+            hold-trigger-key-positions = <1 2 3 4 5 13 14 15 16 17 25 26 27 28 29 37 0>;
             hold-trigger-on-release;
         };
     };
@@ -319,7 +319,7 @@
         qwerty {
             bindings = <
 &trans  &kp Q                 &kp W                &kp E                &kp R                 &kp T                   &kp Y   &kp U                 &kp I                &kp O                &kp P                     &trans
-&trans  &mt_hrmL_tap LCTRL A  &mt_hrmL_tap LALT S  &mt_hrmL_tap LGUI D  &mt_hrmL_tap LSHFT F  &kp G                   &kp H   &mt_hrmR_tap LSHFT J  &mt_hrmL_tap LGUI K  &mt_hrmL_tap LALT L  &mt_hrmL_tap LCTRL COLON  &trans
+&trans  &mt_hrmL_tap LCTRL A  &mt_hrmL_tap LALT S  &mt_hrmL_tap LGUI D  &mt_hrmL_tap LSHFT F  &kp G                   &kp H   &mt_hrmR_tap LSHFT J  &mt_hrmR_tap LGUI K  &mt_hrmR_tap LALT L  &mt_hrmR_tap LCTRL COLON  &trans
 &trans  &kp Z                 &kp X                &kp C                &kp V                 &kp B                   &kp N   &kp M                 &kp COMMA            &kp DOT              &kp SQT                   &trans
                                                                         &trans                &trans  &trans  &trans  &trans  &trans
             >;
@@ -345,7 +345,7 @@
 
         navigation {
             bindings = <
-&trans  &none      &none     &none     &none      &none                   &none   &kp LG(V)  &kp LG(C)  &kp LG(X)  &kp LG(Z)  &trans
+&trans  &none      &none     &none     &none      &none                   &none   &kp LG(Z)  &kp LG(V)  &kp LG(C)  &kp LG(X)  &trans
 &trans  &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none                   &none   &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans
 &trans  &none      &none     &none     &none      &none                   &none   &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &trans
                                        &trans     &trans  &trans  &trans  &trans  &trans
@@ -354,10 +354,10 @@
 
         mouse {
             bindings = <
-&none  &none  &none      &ht_bspc LG(BACKSPACE) BACKSPACE  &none  &none                      &none  &none  &none  &none  &none  &none
-&none  &td_z  &kp LG(X)  &kp LG(C)                         &td_v  &kp LG(A)                  &none  &none  &none  &none  &none  &none
-&none  &none  &none      &none                             &none  &none                      &none  &none  &none  &none  &none  &none
-                                                           &none  &none      &trans  &trans  &none  &none
+&none  &none      &none      &ht_bspc LG(BACKSPACE) BACKSPACE  &none  &none                      &none  &none  &none  &none  &none  &none
+&none  &kp LG(X)  &kp LG(C)  &td_v                             &td_z  &kp LG(A)                  &none  &none  &none  &none  &none  &none
+&none  &none      &none      &none                             &none  &none                      &none  &none  &none  &none  &none  &none
+                                                               &none  &none      &trans  &trans  &none  &none
             >;
         };
 
