@@ -42,7 +42,7 @@
             bindings = <&kp BACKSPACE>, <&kp DEL>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_RSFT)>;
         };
 
         /* tap-dance */
@@ -306,7 +306,7 @@
         compatible = "zmk,combos";
 
         bspc {
-            bindings = <&kp BACKSPACE>;
+            bindings = <&mm_bspc>;
             key-positions = <9 8>;
             layers = <0 3 4 7 1>;
             require-prior-idle-ms = <75>;
@@ -328,10 +328,10 @@
 
         colemak {
             bindings = <
-&kp ESC     &kp Q                 &kp W                &kp F                &kp P                  &kp Z                                                       &kp J            &kp L                  &kp U                &kp Y                &mm_apos              &kp DEL
-&mm_shiftR  &mt_hrmL_tap LCTRL A  &mt_hrmL_tap LALT R  &mt_hrmL_tap LGUI S  &mt_hrmL_tap LSHIFT T  &kp D                                                       &kp H            &mt_hrmR_tap LSHIFT N  &mt_hrmR_tap LGUI E  &mt_hrmR_tap LALT I  &mt_hrmR_tap LCTRL O  &mm_shiftL
-&none       &kp X                 &kp C                &kp V                &kp G                  &kp B                                                       &kp K            &kp M                  &mm_underscore       &mm_dot              &mm_comma             &none
-                                                                            &sl 3                  &lt_nav 4 ENTER  &lt_balanced 5 ESC  &lt_balanced 6 C_PLAY  &lt_num 7 SPACE  &sl 8
+&none       &kp Q                 &kp W                &kp F                &kp P                  &kp Z                                                    &kp J            &kp L                  &kp U                &kp Y                &mm_apos              &none
+&mm_shiftR  &mt_hrmL_tap LCTRL A  &mt_hrmL_tap LALT R  &mt_hrmL_tap LGUI S  &mt_hrmL_tap LSHIFT T  &kp D                                                    &kp H            &mt_hrmR_tap LSHIFT N  &mt_hrmR_tap LGUI E  &mt_hrmR_tap LALT I  &mt_hrmR_tap LCTRL O  &mm_shiftL
+&none       &kp X                 &kp C                &kp V                &kp G                  &kp B                                                    &kp K            &kp M                  &mm_underscore       &mm_dot              &mm_comma             &none
+                                                                            &sl 3                  &lt_nav 4 ENTER  &lt_balanced 5 ESC  &lt_balanced 6 ESC  &lt_num 7 SPACE  &sl 8
             >;
         };
 
