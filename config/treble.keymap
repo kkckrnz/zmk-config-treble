@@ -80,6 +80,15 @@
             mods = <(MOD_RSFT)>;
         };
 
+        mm_grave: mm_grave {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_GRAVE";
+            bindings = <&kp GRAVE>, <&mc_code>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT)>;
+        };
+
         /* tap-dance */
 
         td_z: td_z {
@@ -188,15 +197,6 @@
             quick-tap-ms = <175>;
             flavor = "tap-preferred";
         };
-
-        mm_grave: mm_grave {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_GRAVE";
-            bindings = <&kp GRAVE>, <&mc_code>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_RSFT)>;
-        };
     };
 
     /* macros */
@@ -222,6 +222,8 @@
             #binding-cells = <0>;
             bindings = <&kp N1>;
             label = "MC_1";
+            wait-ms = <1>;
+            tap-ms = <1>;
         };
 
         mc_2: mc_2 {
@@ -229,6 +231,8 @@
             #binding-cells = <0>;
             bindings = <&kp N2>;
             label = "MC_2";
+            wait-ms = <1>;
+            tap-ms = <1>;
         };
 
         mc_code: mc_code {
