@@ -197,6 +197,16 @@
             quick-tap-ms = <175>;
             flavor = "tap-preferred";
         };
+
+        ht_lock: ht_lock {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_LOCK";
+            bindings = <&kp>, <&tog>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <1000>;
+            flavor = "tap-preferred";
+        };
     };
 
     /* macros */
@@ -279,7 +289,7 @@
 
         colemak {
             bindings = <
-&mc_lang    &kp Q              &kp W             &kp F             &kp P               &kp Z                                             &kp J            &kp L               &kp U             &kp Y             &mm_apos           &tog 2
+&mc_lang    &kp Q              &kp W             &kp F             &kp P               &kp Z                                             &kp J            &kp L               &kp U             &kp Y             &mm_apos           &ht_lock LG(LC(Q)) 2
 &mm_shiftR  &mt_baseL LCTRL A  &mt_baseL LALT R  &mt_baseL LGUI S  &mt_baseL LSHIFT T  &kp D                                             &kp H            &mt_baseR LSHIFT N  &mt_baseR LGUI E  &mt_baseR LALT I  &mt_baseR LCTRL O  &mm_shiftL
 &none       &kp X              &kp C             &kp V             &kp G               &kp B                                             &kp K            &kp M               &mm_grave         &mm_dot           &mm_comma          &none
                                                                    &sl 3               &lt_nav 4 ENTER  &lt_bal 5 C_PLAY  &lt_bal 6 ESC  &lt_num 7 SPACE  &sl 8
