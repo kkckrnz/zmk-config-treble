@@ -234,7 +234,7 @@
         mc_code: mc_code {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp GRAVE &kp GRAVE &kp GRAVE &kp RET &kp GRAVE &kp GRAVE &kp GRAVE &kp UP_ARROW>;
+            bindings = <&kp GRAVE &kp GRAVE &kp GRAVE>;
             label = "MC_CODE";
             wait-ms = <1>;
             tap-ms = <1>;
