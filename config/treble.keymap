@@ -242,6 +242,15 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        mm_grave: mm_grave {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_GRAVE";
+            bindings = <&kp GRAVE>, <&mc_code>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT)>;
+        };
     };
 
     /* macros */
@@ -275,6 +284,15 @@
             bindings = <&kp N2>;
             label = "MC_2";
         };
+
+        mc_code: mc_code {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE &kp GRAVE &kp GRAVE &kp RET &kp GRAVE &kp GRAVE &kp GRAVE &kp UP_ARROW>;
+            label = "MC_CODE";
+            wait-ms = <1>;
+            tap-ms = <1>;
+        };
     };
 
     /* combos */
@@ -307,7 +325,7 @@
             bindings = <
 &none       &kp Q                 &kp W                &kp F                &kp P                  &kp Z                                                       &kp J            &kp L                  &kp U                &kp Y                &mm_apos              &kp C_POWER
 &mm_shiftR  &mt_hrmL_tap LCTRL A  &mt_hrmL_tap LALT R  &mt_hrmL_tap LGUI S  &mt_hrmL_tap LSHIFT T  &kp D                                                       &kp H            &mt_hrmR_tap LSHIFT N  &mt_hrmR_tap LGUI E  &mt_hrmR_tap LALT I  &mt_hrmR_tap LCTRL O  &mm_shiftL
-&none       &kp X                 &kp C                &kp V                &kp G                  &kp B                                                       &kp K            &kp M                  &mm_underscore       &mm_dot              &mm_comma             &none
+&none       &kp X                 &kp C                &kp V                &kp G                  &kp B                                                       &kp K            &kp M                  &mm_grave            &mm_dot              &mm_comma             &none
                                                                             &sl 3                  &lt_nav 4 ENTER  &lt_balanced 5 C_PLAY  &lt_balanced 6 ESC  &lt_num 7 SPACE  &sl 8
             >;
         };
@@ -332,10 +350,10 @@
 
         symbolR {
             bindings = <
-&trans  &none                  &kp LBRC                &kp RBRC                &kp DOLLAR                         &none                          &none        &kp CARET                 &kp STAR                 &kp FSLH                 &kp TILDE                       &trans
-&trans  &mt_hrmL_tap LCTRL AT  &mt_hrmL_tap LALT LPAR  &mt_hrmL_tap LGUI RPAR  &mt_hrmL_tap LSHIFT DOUBLE_QUOTES  &kp AMPERSAND                  &kp PERCENT  &mt_hrmR_tap LSHIFT PLUS  &mt_hrmR_tap LGUI MINUS  &mt_hrmR_tap LALT EQUAL  &mt_hrmR_tap LCTRL EXCLAMATION  &trans
-&trans  &none                  &kp LBKT                &kp RBKT                &kp BACKSLASH                      &kp PIPE                       &none        &kp LESS_THAN             &kp HASH                 &kp DOT                  &kp GREATER_THAN                &trans
-                                                                               &trans                             &trans         &trans  &trans  &trans       &trans
+&trans  &none      &none     &none     &none       &none                   &none        &kp CARET      &kp STAR   &kp FSLH   &kp TILDE         &trans
+&trans  &sk LCTRL  &sk LALT  &sk LGUI  &kp LSHIFT  &none                   &kp PERCENT  &kp PLUS       &kp MINUS  &kp EQUAL  &kp EXCLAMATION   &trans
+&trans  &none      &none     &none     &none       &none                   &none        &kp LESS_THAN  &kp HASH   &kp DOT    &kp GREATER_THAN  &trans
+                                       &trans      &trans  &trans  &trans  &trans       &trans
             >;
         };
 
@@ -377,10 +395,10 @@
 
         symbolL {
             bindings = <
-&trans  &none   &kp LBRC              &kp RBRC               &kp DOLLAR         &none                          &none        &none                     &none                    &none                    &none                           &trans
-&trans  &kp AT  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOUBLE_QUOTES  &kp AMPERSAND                  &kp PERCENT  &mt_hrmR_tap LSHIFT PLUS  &mt_hrmR_tap LGUI MINUS  &mt_hrmR_tap LALT EQUAL  &mt_hrmR_tap LCTRL EXCLAMATION  &trans
-&trans  &none   &kp LBKT              &kp RBKT               &kp BACKSLASH      &kp PIPE                       &none        &kp LESS_THAN             &kp HASH                 &kp DOT                  &kp GREATER_THAN                &trans
-                                                             &trans             &trans         &trans  &trans  &trans       &trans
+&trans  &none   &kp LBRC              &kp RBRC               &kp DOLLAR         &none                          &none   &none       &none     &none     &none      &trans
+&trans  &kp AT  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOUBLE_QUOTES  &kp AMPERSAND                  &none   &sk LSHIFT  &sk LGUI  &sk LALT  &sk LCTRL  &trans
+&trans  &none   &kp LBKT              &kp RBKT               &kp BACKSLASH      &kp PIPE                       &none   &none       &none     &none     &none      &trans
+                                                             &trans             &trans         &trans  &trans  &trans  &trans
             >;
         };
 
