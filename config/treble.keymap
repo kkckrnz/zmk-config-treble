@@ -282,6 +282,14 @@
             key-positions = <33 32>;
             layers = <5>;
         };
+
+        back {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <8 20>;
+            layers = <0 1 3 4 7 8>;
+            timeout-ms = <40>;
+            require-prior-idle-ms = <75>;
+        };
     };
 
     keymap {
