@@ -272,7 +272,7 @@
             key-positions = <3 2>;
             timeout-ms = <40>;
             require-prior-idle-ms = <75>;
-            layers = <0 1 4 7>;
+            layers = <0 1 4 7 6>;
         };
 
         mute {
