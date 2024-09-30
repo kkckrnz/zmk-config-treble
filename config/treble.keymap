@@ -273,12 +273,49 @@
             timeout-ms = <40>;
             require-prior-idle-ms = <75>;
             layers = <0 1 4 7 6>;
+            slow-release;
         };
 
-        mute {
-            bindings = <&kp C_MUTE>;
-            key-positions = <33 32>;
-            layers = <5>;
+        vol_dn {
+            bindings = <&kp C_VOL_DN>;
+            key-positions = <31 32>;
+            require-prior-idle-ms = <150>;
+            layers = <0 1>;
+        };
+
+        vol_up {
+            bindings = <&kp C_VOL_UP>;
+            key-positions = <32 33>;
+            require-prior-idle-ms = <150>;
+            layers = <0 1>;
+        };
+
+        bri_up {
+            bindings = <&kp C_BRI_UP>;
+            key-positions = <28 27>;
+            require-prior-idle-ms = <150>;
+            layers = <0 1>;
+        };
+
+        bri_dn {
+            bindings = <&kp C_BRI_DEC>;
+            key-positions = <27 26>;
+            require-prior-idle-ms = <150>;
+            layers = <0 1>;
+        };
+
+        next {
+            bindings = <&kp C_NEXT>;
+            key-positions = <31 33>;
+            require-prior-idle-ms = <150>;
+            layers = <0 1>;
+        };
+
+        prev {
+            bindings = <&kp C_PREV>;
+            key-positions = <26 28>;
+            require-prior-idle-ms = <150>;
+            layers = <0 1>;
         };
     };
 
