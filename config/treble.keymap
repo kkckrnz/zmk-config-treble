@@ -343,7 +343,7 @@
 &mc_lang    &kp Q             &kp W            &kp F            &kp P              &kp Z                                            &kp J            &kp L              &kp U            &kp Y            &mm_apos          &ht_lock LG(LC(Q)) 2
 &mm_shiftR  &mt_tapL LCTRL A  &mt_tapL LALT R  &mt_tapL LGUI S  &mt_tapL LSHIFT T  &kp D                                            &kp H            &mt_tapR LSHIFT N  &mt_tapR LGUI E  &mt_tapR LALT I  &mt_tapR LCTRL O  &mm_shiftL
 &kp LEFT    &kp X             &kp C            &kp V            &kp G              &kp B                                            &kp K            &kp M              &mm_grave        &mm_dot          &mm_comma         &kp RIGHT
-                                                                &sl 7              &lt_nav 5 ENTER  &lt_bal 3 C_PLAY  &num_word 4   &lt_fun 6 SPACE  &sl 8
+                                                                &sl 7              &lt_nav 5 ENTER  &lt_bal 3 C_PLAY  &caps_word    &lt_fun 6 SPACE  &sl 8
             >;
         };
 
