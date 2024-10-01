@@ -129,7 +129,7 @@
         lt_num: lt_num {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_NUM";
-            bindings = <&mo>, <&num_word &4>;
+            bindings = <&mo>, <&num_word number>;
 
             #binding-cells = <1>;
             tapping-term-ms = <200>;
