@@ -249,7 +249,7 @@
         bspc {
             bindings = <&kp BACKSPACE>;
             key-positions = <9 8>;
-            layers = <0 4 7 1 3 8>;
+            layers = <0 4 3 1 5 6>;
             require-prior-idle-ms = <75>;
             timeout-ms = <40>;
             slow-release;
@@ -260,7 +260,7 @@
             key-positions = <3 2>;
             timeout-ms = <40>;
             require-prior-idle-ms = <75>;
-            layers = <0 1 4 7 6>;
+            layers = <0 1 4 3 8>;
             slow-release;
         };
 
@@ -312,7 +312,7 @@
             timeout-ms = <40>;
             slow-release;
             require-prior-idle-ms = <75>;
-            layers = <0 4 7 1 3 8>;
+            layers = <0 4 3 1 5 6>;
         };
     };
 
@@ -324,7 +324,7 @@
 &mc_lang    &kp Q             &kp W            &kp F            &kp P              &kp Z                                             &kp J            &kp L              &kp U            &kp Y            &mm_apos          &ht_lock LG(LC(Q)) 2
 &mm_shiftR  &mt_tapL LCTRL A  &mt_tapL LALT R  &mt_tapL LGUI S  &mt_tapL LSHIFT T  &kp D                                             &kp H            &mt_tapR LSHIFT N  &mt_tapR LGUI E  &mt_tapR LALT I  &mt_tapR LCTRL O  &mm_shiftL
 &kp LEFT    &kp X             &kp C            &kp V            &kp G              &kp B                                             &kp K            &kp M              &mm_grave        &mm_dot          &mm_comma         &kp RIGHT
-                                                                &sl 3              &lt_nav 4 ENTER  &lt_bal 5 C_PLAY  &lt_bal 6 ESC  &lt_num 7 SPACE  &sl 8
+                                                                &sl 5              &lt_nav 4 ENTER  &lt_bal 7 C_PLAY  &lt_bal 8 ESC  &lt_num 3 SPACE  &sl 6
             >;
         };
 
@@ -346,6 +346,24 @@
             >;
         };
 
+        number {
+            bindings = <
+&trans  &none   &kp N0  &kp N9  &none   &none                   &none   &kp CARET             &kp STAR              &kp SLASH             &none                    &trans
+&trans  &kp N4  &kp N3  &kp N2  &kp N1  &none                   &none   &mt_holdR LSHFT PLUS  &mt_holdR LGUI MINUS  &mt_holdR LALT EQUAL  &mt_holdR LCTRL PERCENT  &trans
+&trans  &kp N8  &kp N7  &kp N6  &kp N5  &none                   &none   &none                 &none                 &trans                &trans                   &trans
+                                &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        navigation {
+            bindings = <
+&trans  &none                  &none                 &none                 &none                  &none                   &none   &none     &none      &none      &none      &trans
+&trans  &mt_holdL LCTRL LG(X)  &mt_holdL LALT LG(C)  &mt_holdL LGUI LG(V)  &mt_holdL LSHFT LG(Z)  &none                   &none   &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans
+&trans  &none                  &none                 &none                 &none                  &none                   &none   &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans
+                                                                           &trans                 &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
         symbolR {
             bindings = <
 &trans  &none      &none     &none     &none       &none                   &kp TILDE        &kp CARET      &kp STAR   &kp FSLH   &none             &trans
@@ -355,12 +373,12 @@
             >;
         };
 
-        navigation {
+        symbolL {
             bindings = <
-&trans  &none                  &none                 &none                 &none                  &none                   &none   &kp LG(Z)  &kp LG(V)  &kp LG(C)  &kp LG(X)  &trans
-&trans  &mt_holdL LCTRL LG(X)  &mt_holdL LALT LG(C)  &mt_holdL LGUI LG(V)  &mt_holdL LSHFT LG(Z)  &none                   &none   &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans
-&trans  &none                  &none                 &none                 &none                  &none                   &none   &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &trans
-                                                                           &trans                 &trans  &trans  &trans  &trans  &trans
+&trans  &none   &kp LBRC              &kp RBRC               &kp DOLLAR         &none                          &none   &none       &none     &none     &none      &trans
+&trans  &kp AT  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOUBLE_QUOTES  &kp AMPERSAND                  &none   &sk LSHIFT  &sk LGUI  &sk LALT  &sk LCTRL  &trans
+&trans  &none   &kp LBKT              &kp RBKT               &kp BACKSLASH      &kp PIPE                       &none   &none       &none     &none     &none      &trans
+                                                             &trans             &trans         &trans  &trans  &trans  &trans
             >;
         };
 
@@ -382,24 +400,6 @@
             >;
         };
 
-        number {
-            bindings = <
-&trans  &none   &kp N0  &kp N9  &none   &none                   &none   &kp CARET             &kp STAR              &kp SLASH             &none                    &trans
-&trans  &kp N4  &kp N3  &kp N2  &kp N1  &none                   &none   &mt_holdR LSHFT PLUS  &mt_holdR LGUI MINUS  &mt_holdR LALT EQUAL  &mt_holdR LCTRL PERCENT  &trans
-&trans  &kp N8  &kp N7  &kp N6  &kp N5  &none                   &none   &none                 &none                 &trans                &trans                   &trans
-                                &trans  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        symbolL {
-            bindings = <
-&trans  &none   &kp LBRC              &kp RBRC               &kp DOLLAR         &none                          &none   &none       &none     &none     &none      &trans
-&trans  &kp AT  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOUBLE_QUOTES  &kp AMPERSAND                  &none   &sk LSHIFT  &sk LGUI  &sk LALT  &sk LCTRL  &trans
-&trans  &none   &kp LBKT              &kp RBKT               &kp BACKSLASH      &kp PIPE                       &none   &none       &none     &none     &none      &trans
-                                                             &trans             &trans         &trans  &trans  &trans  &trans
-            >;
-        };
-
         system {
             bindings = <
 &none  &none  &mc_2  &mc_1  &none  &none                &none       &none         &sys_reset    &bootloader   &none         &none
@@ -414,7 +414,7 @@
         compatible = "zmk,conditional-layers";
 
         system {
-            if-layers = <5 6>;
+            if-layers = <7 8>;
             then-layer = <9>;
         };
     };
