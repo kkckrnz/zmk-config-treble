@@ -249,7 +249,7 @@
         bspc {
             bindings = <&kp BACKSPACE>;
             key-positions = <9 8>;
-            layers = <0 5 4 1 7 8>;
+            layers = <0 5 4 1 7 8 3 6>;
             require-prior-idle-ms = <75>;
             timeout-ms = <40>;
             slow-release;
@@ -260,7 +260,7 @@
             key-positions = <3 2>;
             timeout-ms = <40>;
             require-prior-idle-ms = <75>;
-            layers = <0 1 5 4 6>;
+            layers = <0 1 5 4 6 3 7 8>;
             slow-release;
         };
 
@@ -312,7 +312,15 @@
             timeout-ms = <40>;
             slow-release;
             require-prior-idle-ms = <75>;
-            layers = <0 5 4 1 7 8>;
+            layers = <0 5 4 1 7 8 3 6>;
+        };
+
+        esc {
+            bindings = <&kp ESC>;
+            key-positions = <3 4>;
+            timeout-ms = <40>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1 3 4 5 6 7 8>;
         };
     };
 
@@ -321,10 +329,10 @@
 
         colemak {
             bindings = <
-&mc_lang    &kp Q             &kp W            &kp F            &kp P              &kp Z                                             &kp J            &kp L              &kp U            &kp Y            &mm_apos          &ht_lock LG(LC(Q)) 2
-&mm_shiftR  &mt_tapL LCTRL A  &mt_tapL LALT R  &mt_tapL LGUI S  &mt_tapL LSHIFT T  &kp D                                             &kp H            &mt_tapR LSHIFT N  &mt_tapR LGUI E  &mt_tapR LALT I  &mt_tapR LCTRL O  &mm_shiftL
-&kp LEFT    &kp X             &kp C            &kp V            &kp G              &kp B                                             &kp K            &kp M              &mm_grave        &mm_dot          &mm_comma         &kp RIGHT
-                                                                &sl 7              &lt_nav 5 ENTER  &lt_bal 3 C_PLAY  &lt_bal 4 ESC  &lt_fun 6 SPACE  &sl 8
+&mc_lang    &kp Q             &kp W            &kp F            &kp P              &kp Z                                     &kp J            &kp L              &kp U            &kp Y            &mm_apos          &ht_lock LG(LC(Q)) 2
+&mm_shiftR  &mt_tapL LCTRL A  &mt_tapL LALT R  &mt_tapL LGUI S  &mt_tapL LSHIFT T  &kp D                                     &kp H            &mt_tapR LSHIFT N  &mt_tapR LGUI E  &mt_tapR LALT I  &mt_tapR LCTRL O  &mm_shiftL
+&kp LEFT    &kp X             &kp C            &kp V            &kp G              &kp B                                     &kp K            &kp M              &mm_grave        &mm_dot          &mm_comma         &kp RIGHT
+                                                                &sl 7              &lt_nav 5 ENTER  &lt_bal 3 C_PLAY  &sl 4  &lt_fun 6 SPACE  &sl 8
             >;
         };
 
