@@ -366,10 +366,10 @@
 
         symbolR {
             bindings = <
-&trans  &none      &none     &none     &none       &none                   &kp TILDE        &kp CARET      &kp STAR   &kp FSLH   &none             &trans
-&trans  &sk LCTRL  &sk LALT  &sk LGUI  &kp LSHIFT  &none                   &kp EXCLAMATION  &kp PLUS       &kp MINUS  &kp EQUAL  &kp PERCENT       &trans
-&trans  &none      &none     &none     &none       &none                   &none            &kp LESS_THAN  &kp HASH   &kp DOT    &kp GREATER_THAN  &trans
-                                       &trans      &trans  &trans  &trans  &trans           &trans
+&trans  &none      &kp LESS_THAN  &kp GREATER_THAN  &none       &none                   &kp TILDE        &kp CARET  &kp STAR   &kp FSLH   &none        &trans
+&trans  &sk LCTRL  &sk LALT       &sk LGUI          &kp LSHIFT  &none                   &kp EXCLAMATION  &kp PLUS   &kp MINUS  &kp EQUAL  &kp PERCENT  &trans
+&trans  &none      &none          &none             &none       &none                   &none            &none      &kp HASH   &kp DOT    &none        &trans
+                                                    &trans      &trans  &trans  &trans  &trans           &trans
             >;
         };
 
